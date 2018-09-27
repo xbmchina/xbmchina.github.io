@@ -1222,7 +1222,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/Hexo-blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero">
@@ -1241,7 +1241,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/26/hexo-blog/" itemprop="url">hexo+GitHub搭建个人博客</a></h1>
+                <a class="post-title-link" href="/2018/09/26/Hexo-blog/" itemprop="url">Hexo+GitHub搭建个人博客</a></h1>
         
 
         <div class="post-meta">
@@ -1331,7 +1331,7 @@
 <li>部署到GitHub中</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save  //安装插件</span><br><span class="line">hexo d  //  部署的命令</span><br></pre></td></tr></table></figure>
-<h3 id="四、配置域名"><a href="#四、配置域名" class="headerlink" title="四、配置域名"></a>四、配置域名</h3><ol>
+<h3 id="五、配置域名"><a href="#五、配置域名" class="headerlink" title="五、配置域名"></a>五、配置域名</h3><ol>
 <li><p>如果你有的话也可以配置，腾讯云的比较便宜，不过域名要备案的</p>
 <ul>
 <li>根目录/source 目录下创建一个<strong>新文件</strong>CNAME</li>
@@ -1341,159 +1341,14 @@
 </ul>
 </li>
 </ol>
-<h3 id="五、发布自己文章"><a href="#五、发布自己文章" class="headerlink" title="五、发布自己文章"></a>五、发布自己文章</h3><ol>
+<h3 id="六、发布自己文章"><a href="#六、发布自己文章" class="headerlink" title="六、发布自己文章"></a>六、发布自己文章</h3><ol>
 <li>在blog根目录\source_posts中有.md的文件模板</li>
 <li>然后你可以写好.md文件之后，运行hexo clean、hexo g、hexo d  进行发布。</li>
 <li>所以修改模板的名字这些操作可以全局搜索，相应的关键词进行替换就可以修改成你自己的名字了。_config.yml文件中可以修改作者和blog的名称之类的配置。</li>
 </ol>
-<h3 id="六、后记"><a href="#六、后记" class="headerlink" title="六、后记"></a>六、后记</h3><pre><code>感谢这位大哥的指引
+<h3 id="七、后记"><a href="#七、后记" class="headerlink" title="七、后记"></a>七、后记</h3><pre><code>感谢这位大哥的指引
 https://blog.csdn.net/Hoshea_chx/article/details/78826689
 </code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/myblog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZeroBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/26/myblog/" itemprop="url">myblog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T21:19:05+08:00">
-                2018-09-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="一、SQLContext、HiveContext、SparkSession"><a href="#一、SQLContext、HiveContext、SparkSession" class="headerlink" title="一、SQLContext、HiveContext、SparkSession"></a>一、SQLContext、HiveContext、SparkSession</h3><blockquote>
-<ul>
-<li>SQLContext：是spark sql的一个分支入口，可以用来操作sql，这个主要是针对spark来说</li>
-<li>HiveContext：是spark sql中另外分支，用来操作hive。</li>
-<li>SparkSession：Spark2.0中引入了SparkSession的概念，它为用户提供了一个统一的切入点来使用Spark的各项功能，用户不但可以使用DataFrame和Dataset的各种API</li>
-</ul>
-</blockquote>
-<h5 id="DataFrame和Dataset"><a href="#DataFrame和Dataset" class="headerlink" title="DataFrame和Dataset"></a>DataFrame和Dataset</h5><blockquote>
-<ul>
-<li>DataFrame：<br>在Spark中，DataFrame是一种以RDD为基础的分布式数据据集，类似于传统数据库听二维表格，DataFrame带有Schema元信息，即DataFrame所表示的二维表数据集的每一列都带有名称和类型。<br>类似这样的<br>root<br>|– age: long (nullable = true)<br>|– id: long (nullable = true)<br>|– name: string (nullable = true)  </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>Dataset：<br>Dataset是特定域对象中的强类型集合，它可以使用函数或者相关操作并行地进行转换等操作。每个Dataset都有一个称为DataFrame的非类型化的视图，这个视图是行的数据集。上面的定义看起来和RDD的定义类似，RDD的定义如下：<br>RDD也是可以并行化的操作，DataSet和RDD主要的区别是：DataSet是特定域的对象集合；然而RDD是任何对象的集合。DataSet的API总是强类型的；而且可以利用这些模式进行优化，然而RDD却不行。<br>Dataset的定义中还提到了DataFrame，DataFrame是特殊的Dataset，它在编译时不会对模式进行检测。在未来版本的Spark，Dataset将会替代RDD成为我们开发编程使用的API（注意，RDD并不是会被取消，而是会作为底层的API提供给用户使用）。</li>
-</ul>
-</blockquote>
-<p> DataFrame和Dataset的区别<a href="http://spark.apache.org/docs/latest/sql-programming-guide.html#datasets-and-dataframes" target="_blank" rel="noopener">官网地址</a></p>
-<h6 id="以下基于spark2-3-1"><a href="#以下基于spark2-3-1" class="headerlink" title="以下基于spark2.3.1"></a>以下基于spark2.3.1</h6><h3 id="二、SQLContext的使用"><a href="#二、SQLContext的使用" class="headerlink" title="二、SQLContext的使用"></a>二、SQLContext的使用</h3><h6 id="1、建一个Scala应用程序"><a href="#1、建一个Scala应用程序" class="headerlink" title="1、建一个Scala应用程序"></a>1、建一个Scala应用程序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * SQLContext的使用</span><br><span class="line">  *</span><br><span class="line">  */</span><br><span class="line">object SQLContextApp &#123;</span><br><span class="line"></span><br><span class="line">  def main(args: Array[String]): Unit = &#123;</span><br><span class="line">    val path = args(0)</span><br><span class="line"></span><br><span class="line">    //1)创建相应的context</span><br><span class="line">    val sqlConf = new SparkConf()</span><br><span class="line">    //生成环境中，通过命令来指定比较好一点</span><br><span class="line">//    sqlConf.setAppName(&quot;SQLContextApp&quot;).setMaster(&quot;local[2]&quot;)</span><br><span class="line">    val sc = new SparkContext(sqlConf)</span><br><span class="line">    val sqlContext = new SQLContext(sc)</span><br><span class="line"></span><br><span class="line">//    2)相关处理：json</span><br><span class="line">   val people = sqlContext.read.format(&quot;json&quot;).load(path)</span><br><span class="line">    people.printSchema()</span><br><span class="line">    people.show()</span><br><span class="line"></span><br><span class="line">//    3)关闭资源</span><br><span class="line">    sc.stop()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="2、编写执行的文件-SQLContextApp-sh文件"><a href="#2、编写执行的文件-SQLContextApp-sh文件" class="headerlink" title="2、编写执行的文件 SQLContextApp.sh文件"></a>2、编写执行的文件 SQLContextApp.sh文件</h6><h6 id="vi-SQLContextApp-sh-添加下面的shell"><a href="#vi-SQLContextApp-sh-添加下面的shell" class="headerlink" title="vi SQLContextApp.sh 添加下面的shell"></a>vi SQLContextApp.sh 添加下面的shell</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spark-submit \</span><br><span class="line"> --name SQLContextApp</span><br><span class="line">  --class com.zero.spark.SQLContextApp \</span><br><span class="line">  --master local[2] \</span><br><span class="line">  /root/lib/sqlspark-1.0.jar \</span><br><span class="line">  /root/app/spark-2.3.0/examples/src/main/resources/people.json</span><br></pre></td></tr></table></figure>
-<h3 id="三、HiveContext的使用"><a href="#三、HiveContext的使用" class="headerlink" title="三、HiveContext的使用"></a>三、HiveContext的使用</h3><h6 id="1、首先要添加相应的依赖"><a href="#1、首先要添加相应的依赖" class="headerlink" title="1、首先要添加相应的依赖"></a>1、首先要添加相应的依赖</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   &lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.spark&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spark-hive_2.11&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;$&#123;spark.version&#125;&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="2、建一个Scala应用程序"><a href="#2、建一个Scala应用程序" class="headerlink" title="2、建一个Scala应用程序"></a>2、建一个Scala应用程序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * hiveContext的使用</span><br><span class="line">  */</span><br><span class="line">object HiveContextApp &#123;</span><br><span class="line"></span><br><span class="line">  def main(args: Array[String]): Unit = &#123;</span><br><span class="line"></span><br><span class="line">    //1)创建相应的context</span><br><span class="line">    val sqlConf = new SparkConf()</span><br><span class="line">    //生成环境中，通过命令来指定比较好一点</span><br><span class="line">    //    sqlConf.setAppName(&quot;SQLContextApp&quot;).setMaster(&quot;local[2]&quot;)</span><br><span class="line">    val sc = new SparkContext(sqlConf)</span><br><span class="line">    val hiveContext = new HiveContext(sc)</span><br><span class="line"></span><br><span class="line">    //2)相关处理：json</span><br><span class="line"></span><br><span class="line">    hiveContext.table(&quot;emp&quot;).show()</span><br><span class="line"></span><br><span class="line">    //3)关闭资源</span><br><span class="line">    sc.stop()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="3、编写执行的文件-HiveContextApp-sh文件"><a href="#3、编写执行的文件-HiveContextApp-sh文件" class="headerlink" title="3、编写执行的文件 HiveContextApp.sh文件"></a>3、编写执行的文件 HiveContextApp.sh文件</h6><h6 id="vi-HiveContextApp-sh-添加下面的shell"><a href="#vi-HiveContextApp-sh-添加下面的shell" class="headerlink" title="vi HiveContextApp.sh 添加下面的shell"></a>vi HiveContextApp.sh 添加下面的shell</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spark-submit \</span><br><span class="line"> --name SQLContextApp \</span><br><span class="line"> --jars /root/software/mysql-connector-java-5.1.27.jar \</span><br><span class="line">  --class com.zero.spark.HiveContextApp \</span><br><span class="line">  --master local[2] \</span><br><span class="line">  /root/lib/sqlspark-1.0.jar \</span><br></pre></td></tr></table></figure>
-<h3 id="四、SparkSession的使用"><a href="#四、SparkSession的使用" class="headerlink" title="四、SparkSession的使用"></a>四、SparkSession的使用</h3><h6 id="1、建一个Scala应用程序-1"><a href="#1、建一个Scala应用程序-1" class="headerlink" title="1、建一个Scala应用程序"></a>1、建一个Scala应用程序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * SparkSession的使用</span><br><span class="line">  */</span><br><span class="line">object SparkSessionApp &#123;</span><br><span class="line"></span><br><span class="line">  def main(args: Array[String]): Unit = &#123;</span><br><span class="line">    val spark = SparkSession.builder().appName(&quot;SparkSessionApp&quot;).master(&quot;local[2]&quot;).getOrCreate()</span><br><span class="line"></span><br><span class="line">    val people = spark.read.format(&quot;json&quot;).load(&quot;D:/IDEAWORK/sparkdat/people.json&quot;)</span><br><span class="line">//    val people = spark.read.json()</span><br><span class="line">    people.show()</span><br><span class="line">    spark.stop()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p>如果需要连接数据的话，需要添加 jdbc连接<br>添加依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.spark-project.hive&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;hive-jdbc&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.1.spark2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>最后欢迎各位关注我的公众号</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-1f9c36f16fecab0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ZeroStroy"></p>
-
           
         
       
@@ -1574,7 +1429,7 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
