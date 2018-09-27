@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli   二、初始化 找个空文件夹，打开终端，输入以下命令： 1234hexo i blog   //初始化cd blog       //切换到项目根目录hexo g        //生成页面hexo s        //运行server  打开浏览器输入">
+<meta name="description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+GitHub搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/hexo-blog/index.html">
+<meta property="og:title" content="Yarn使用教程">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/Yarn教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
-<meta property="og:description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli   二、初始化 找个空文件夹，打开终端，输入以下命令： 1234hexo i blog   //初始化cd blog       //切换到项目根目录hexo g        //生成页面hexo s        //运行server  打开浏览器输入">
+<meta property="og:description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://img-blog.csdn.net/20161115143629057">
-<meta property="og:updated_time" content="2018-09-26T15:30:16.704Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-27T12:19:43.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+GitHub搭建个人博客">
-<meta name="twitter:description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli   二、初始化 找个空文件夹，打开终端，输入以下命令： 1234hexo i blog   //初始化cd blog       //切换到项目根目录hexo g        //生成页面hexo s        //运行server  打开浏览器输入">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20161115143629057">
+<meta name="twitter:title" content="Yarn使用教程">
+<meta name="twitter:description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/26/hexo-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/27/Yarn教程/"/>
 
 
 
 
 
-  <title>hexo+GitHub搭建个人博客 | ZeroBlog</title>
+  <title>Yarn使用教程 | ZeroBlog</title>
   
 
 
@@ -234,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/Yarn教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero">
@@ -251,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo+GitHub搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">Yarn使用教程</h1>
         
 
         <div class="post-meta">
@@ -263,8 +263,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T21:19:05+08:00">
-                2018-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T21:15:05+08:00">
+                2018-09-27
               </time>
             
 
@@ -301,62 +301,26 @@
       
 
       
-        <h3 id="一、安装Hexo"><a href="#一、安装Hexo" class="headerlink" title="一、安装Hexo"></a>一、安装Hexo</h3><blockquote>
-<ul>
-<li>安装<a href="http://nodejs.cn/" target="_blank" rel="noopener">node.js</a> 、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a> </li>
-<li>安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli</li>
-</ul>
-</blockquote>
-<h3 id="二、初始化"><a href="#二、初始化" class="headerlink" title="二、初始化"></a>二、初始化</h3><ol>
-<li><p>找个空文件夹，打开终端，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo i blog   //初始化</span><br><span class="line">cd blog       //切换到项目根目录</span><br><span class="line">hexo g        //生成页面</span><br><span class="line">hexo s        //运行server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开浏览器输入localhost:4000查看到以下页面<br><img src="https://img-blog.csdn.net/20161115143629057" alt="hexo"></p>
-</li>
-</ol>
-<h3 id="三、修改主题-nexT"><a href="#三、修改主题-nexT" class="headerlink" title="三、修改主题-nexT"></a>三、修改主题-nexT</h3><ol>
-<li><p>blog的根目录下运行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置_config.yml文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改主题<br>   在 站点根目录/themes/next/_congig.yml 文件中修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line"># scheme: Gemini</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行命令</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  //清缓存</span><br><span class="line">hexo g      //重新编译生成代码</span><br><span class="line">hexo s      //部署到本地</span><br><span class="line"></span><br><span class="line">//然后打开浏览器访问 localhost:4000 查看效果</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="四、上传到GitHub"><a href="#四、上传到GitHub" class="headerlink" title="四、上传到GitHub"></a>四、上传到GitHub</h3><ol>
-<li><p>你的GitHub中新建一个repository，<strong>项目名称格式：</strong> 为：你的账号名.github.io</p>
-</li>
-<li><p>修改hexo站点的配置文件_config.yml，找到最后，加入第一步的那个项目地址。格式最好复制过去改，因为这里很狗血的。</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https://github.com/你的账号/你的账号.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署到GitHub中</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save  //安装插件</span><br><span class="line">hexo d  //  部署的命令</span><br></pre></td></tr></table></figure>
-<h3 id="四、配置域名"><a href="#四、配置域名" class="headerlink" title="四、配置域名"></a>四、配置域名</h3><ol>
-<li><p>如果你有的话也可以配置，腾讯云的比较便宜，不过域名要备案的</p>
-<ul>
-<li>根目录/source 目录下创建一个<strong>新文件</strong>CNAME</li>
-<li>将域名添加进去</li>
-<li>运行命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  //清缓存</span><br><span class="line">hexo g      //重新编译生成代码</span><br><span class="line">hexo d      //部署到github</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="五、发布自己文章"><a href="#五、发布自己文章" class="headerlink" title="五、发布自己文章"></a>五、发布自己文章</h3><ol>
-<li>在blog根目录\source_posts中有.md的文件模板</li>
-<li>然后你可以写好.md文件之后，运行hexo clean、hexo g、hexo d  进行发布。</li>
-<li>所以修改模板的名字这些操作可以全局搜索，相应的关键词进行替换就可以修改成你自己的名字了。_config.yml文件中可以修改作者和blog的名称之类的配置。</li>
-</ol>
-<h3 id="六、后记"><a href="#六、后记" class="headerlink" title="六、后记"></a>六、后记</h3><pre><code>感谢这位大哥的指引
-https://blog.csdn.net/Hoshea_chx/article/details/78826689
-</code></pre>
+        <p>####一、Yarn简介：</p>
+<blockquote>
+<p>YARN主要是将资源管理和作业监控拆分成了两个独立的服务：    </p>
+<pre><code>1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。
+ 2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。
+</code></pre></blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Yarn原理图"></p>
+<p><strong>上图解析</strong>：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManager主要负责资源调度，而NodeManager是监控每一个台客户机器的cpu，内存，硬盘和网络状况，同时汇报给ResourceManager。</p>
+<p>主要概念介绍完了，如果想看更多可移步<a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">官网</a></p>
+<p>####二、Yarn的安装和使用</p>
+<h6 id="前提：Hadoop已经安装完成，可参考安装教程"><a href="#前提：Hadoop已经安装完成，可参考安装教程" class="headerlink" title="前提：Hadoop已经安装完成，可参考安装教程"></a>前提：Hadoop已经安装完成，可参考<a href="https://www.jianshu.com/p/1461fdbfe456" target="_blank" rel="noopener">安装教程</a></h6><p>进入hadoop根目录，然后配置，基本上是MapReduce和yarn之间连接的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi   etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure></p>
+<p><strong>填入下面的配置：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>接着</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi   etc/hadoop/yarn-site.xml</span><br></pre></td></tr></table></figure></p>
+<p><strong>填入下面的配置：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>启动</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sbin/start-yarn.sh</span><br></pre></td></tr></table></figure></p>
+<p><strong>验证</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8088/</span><br></pre></td></tr></table></figure></p>
+<p><strong>停止</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> $ sbin/stop-yarn.sh</span><br></pre></td></tr></table></figure></p>
+<p><strong>提交一个MapReduce作业命令：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar /root/app/hadoop-2.6.0-cdh5.7.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0-cdh5.7.0.jar</span><br></pre></td></tr></table></figure></p>
+<p>到此Yarn搭建完成了。</p>
+
       
     </div>
     
@@ -380,8 +344,8 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/26/myblog/" rel="next" title="myblog">
-                <i class="fa fa-chevron-left"></i> myblog
+              <a href="/2018/09/27/HDFS教程/" rel="next" title="HDFS使用教程">
+                <i class="fa fa-chevron-left"></i> HDFS使用教程
               </a>
             
           </div>
@@ -390,8 +354,8 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/27/大数据概述/" rel="prev" title="大数据概述">
-                大数据概述 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/27/MapReduce教程/" rel="prev" title="MapReduce使用教程">
+                MapReduce使用教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,7 +470,7 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">一、安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、初始化"><span class="nav-number">2.</span> <span class="nav-text">二、初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、修改主题-nexT"><span class="nav-number">3.</span> <span class="nav-text">三、修改主题-nexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、上传到GitHub"><span class="nav-number">4.</span> <span class="nav-text">四、上传到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、配置域名"><span class="nav-number">5.</span> <span class="nav-text">四、配置域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、发布自己文章"><span class="nav-number">6.</span> <span class="nav-text">五、发布自己文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、后记"><span class="nav-number">7.</span> <span class="nav-text">六、后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前提：Hadoop已经安装完成，可参考安装教程"><span class="nav-number">1.</span> <span class="nav-text">前提：Hadoop已经安装完成，可参考安装教程</span></a></li></ol></div>
             
 
           </div>

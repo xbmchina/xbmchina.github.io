@@ -81,17 +81,15 @@
 
 <meta name="description" content="一、SQLContext、HiveContext、SparkSession  SQLContext：是spark sql的一个分支入口，可以用来操作sql，这个主要是针对spark来说 HiveContext：是spark sql中另外分支，用来操作hive。 SparkSession：Spark2.0中引入了SparkSession的概念，它为用户提供了一个统一的切入点来使用Spark的各项功能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="myblog">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/myblog/index.html">
+<meta property="og:title" content="SparkSQL使用教程">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/SparkSQL使用教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
 <meta property="og:description" content="一、SQLContext、HiveContext、SparkSession  SQLContext：是spark sql的一个分支入口，可以用来操作sql，这个主要是针对spark来说 HiveContext：是spark sql中另外分支，用来操作hive。 SparkSession：Spark2.0中引入了SparkSession的概念，它为用户提供了一个统一的切入点来使用Spark的各项功能">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-1f9c36f16fecab0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-09-26T13:22:54.625Z">
+<meta property="og:updated_time" content="2018-09-27T12:18:58.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="myblog">
+<meta name="twitter:title" content="SparkSQL使用教程">
 <meta name="twitter:description" content="一、SQLContext、HiveContext、SparkSession  SQLContext：是spark sql的一个分支入口，可以用来操作sql，这个主要是针对spark来说 HiveContext：是spark sql中另外分支，用来操作hive。 SparkSession：Spark2.0中引入了SparkSession的概念，它为用户提供了一个统一的切入点来使用Spark的各项功能">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-1f9c36f16fecab0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/26/myblog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/27/SparkSQL使用教程/"/>
 
 
 
 
 
-  <title>myblog | ZeroBlog</title>
+  <title>SparkSQL使用教程 | ZeroBlog</title>
   
 
 
@@ -234,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/myblog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/SparkSQL使用教程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero">
@@ -251,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">myblog</h1>
+          <h1 class="post-title" itemprop="name headline">SparkSQL使用教程</h1>
         
 
         <div class="post-meta">
@@ -263,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T21:19:05+08:00">
-                2018-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-27T21:19:05+08:00">
+                2018-09-27
               </time>
             
 
@@ -326,7 +324,6 @@
 <h6 id="3、编写执行的文件-HiveContextApp-sh文件"><a href="#3、编写执行的文件-HiveContextApp-sh文件" class="headerlink" title="3、编写执行的文件 HiveContextApp.sh文件"></a>3、编写执行的文件 HiveContextApp.sh文件</h6><h6 id="vi-HiveContextApp-sh-添加下面的shell"><a href="#vi-HiveContextApp-sh-添加下面的shell" class="headerlink" title="vi HiveContextApp.sh 添加下面的shell"></a>vi HiveContextApp.sh 添加下面的shell</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spark-submit \</span><br><span class="line"> --name SQLContextApp \</span><br><span class="line"> --jars /root/software/mysql-connector-java-5.1.27.jar \</span><br><span class="line">  --class com.zero.spark.HiveContextApp \</span><br><span class="line">  --master local[2] \</span><br><span class="line">  /root/lib/sqlspark-1.0.jar \</span><br></pre></td></tr></table></figure>
 <h3 id="四、SparkSession的使用"><a href="#四、SparkSession的使用" class="headerlink" title="四、SparkSession的使用"></a>四、SparkSession的使用</h3><h6 id="1、建一个Scala应用程序-1"><a href="#1、建一个Scala应用程序-1" class="headerlink" title="1、建一个Scala应用程序"></a>1、建一个Scala应用程序</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * SparkSession的使用</span><br><span class="line">  */</span><br><span class="line">object SparkSessionApp &#123;</span><br><span class="line"></span><br><span class="line">  def main(args: Array[String]): Unit = &#123;</span><br><span class="line">    val spark = SparkSession.builder().appName(&quot;SparkSessionApp&quot;).master(&quot;local[2]&quot;).getOrCreate()</span><br><span class="line"></span><br><span class="line">    val people = spark.read.format(&quot;json&quot;).load(&quot;D:/IDEAWORK/sparkdat/people.json&quot;)</span><br><span class="line">//    val people = spark.read.json()</span><br><span class="line">    people.show()</span><br><span class="line">    spark.stop()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p>如果需要连接数据的话，需要添加 jdbc连接<br>添加依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.spark-project.hive&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;hive-jdbc&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.1.spark2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>最后欢迎各位关注我的公众号</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-1f9c36f16fecab0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ZeroStroy"></p>
 
       
     </div>
@@ -351,15 +348,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/09/27/Hive教程/" rel="next" title="Hive使用教程">
+                <i class="fa fa-chevron-left"></i> Hive使用教程
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/26/hexo-blog/" rel="prev" title="hexo+GitHub搭建个人博客">
-                hexo+GitHub搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
