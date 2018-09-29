@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz   在centos中以下链接就可以下载所需的软件安装包12wget http://archive.cloudera.c">
+<meta name="description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz">
 <meta name="keywords" content="大数据,Hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop安装教程">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/Hadoop安装教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
-<meta property="og:description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz   在centos中以下链接就可以下载所需的软件安装包12wget http://archive.cloudera.c">
+<meta property="og:description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-09-27T12:33:06.211Z">
+<meta property="og:updated_time" content="2018-09-29T14:13:25.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop安装教程">
-<meta name="twitter:description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz   在centos中以下链接就可以下载所需的软件安装包12wget http://archive.cloudera.c">
+<meta name="twitter:description" content="一、Hadoop安装需要什么呢？  最低配置4G以上的内存，40g的硬盘是最好的(暂时可用阿里云)。   本文是基于阿里云centos7.3来搞的。所需软件安装包：   hadoop-2.6.0-cdh5.7.0.tar.gz jdk-8u172-linux-x64.tar.gz">
 
 
 
@@ -351,7 +351,8 @@
 <blockquote>
 <ol>
 <li>hadoop-2.6.0-cdh5.7.0.tar.gz</li>
-<li>jdk-8u172-linux-x64.tar.gz</li>
+<li>jdk-8u172-linux-x64.tar.gz<a id="more"></a>
+</li>
 </ol>
 </blockquote>
 <p>在centos中以下链接就可以下载所需的软件安装包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.6.0-cdh5.7.0.tar.gz</span><br><span class="line">wget --no-check-certificate --no-cookies --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u172-b11/a58eab1ec242421181065cdc37240b08/jdk-8u172-linux-x64.tar.gz</span><br></pre></td></tr></table></figure></p>
@@ -362,7 +363,6 @@
 <h6 id="hosts文件-配置："><a href="#hosts文件-配置：" class="headerlink" title="hosts文件 配置："></a>hosts文件 配置：</h6><p>   vi /etc/hosts<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.11.133 hadoop01</span><br></pre></td></tr></table></figure></p>
 <h6 id="特别注意这里：-如果是阿里云上部署的是填写内网ip的，不是外网的那个"><a href="#特别注意这里：-如果是阿里云上部署的是填写内网ip的，不是外网的那个" class="headerlink" title="特别注意这里：(如果是阿里云上部署的是填写内网ip的，不是外网的那个)"></a>特别注意这里：(如果是阿里云上部署的是填写内网ip的，不是外网的那个)</h6><h4 id="4-hadoop两个最重要的配置文件"><a href="#4-hadoop两个最重要的配置文件" class="headerlink" title="4.hadoop两个最重要的配置文件"></a>4.hadoop两个最重要的配置文件</h4><p> 在hadoop的根目录<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> [root@localhost hadoop]# vi  etc/hadoop/core-site.xml</span><br><span class="line">// core-site.xml配置：</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs://hadoop01:8020&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line"> [root@localhost hadoop]# vi  etc/hadoop/hdfs-site.xml</span><br><span class="line">//修改hdfs-site.xml配置：</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">       &lt;name&gt;dfs.http.address&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;hadoop01:50070&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
 <h4 id="5-启动："><a href="#5-启动：" class="headerlink" title="5.启动："></a>5.启动：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//安装的时候，只执行一次，格式化文件系统</span><br><span class="line">[root@localhost hadoop]#  bin/hdfs namenode -Format </span><br><span class="line">//1.启动hdfs：</span><br><span class="line">[root@localhost hadoop]#  sbin/start-dfs.sh</span><br><span class="line">//2.验证是否启动成功</span><br><span class="line">  浏览器访问 http://[你的IP]:50070 或者</span><br><span class="line">  命令：  jps</span><br><span class="line">    		  NameNode</span><br><span class="line">    		 DataNode</span><br><span class="line">    	         SecondaryNameNode</span><br><span class="line">//3.停止hdfs</span><br><span class="line">  ./stop-dfs.sh</span><br><span class="line">//4.配置hadoop快捷方式跟java的配置一样</span><br><span class="line">vi /etc/profile</span><br><span class="line">HADOOP_HOME=/root/app/hadoop-2.6.0-cdh5.7.0</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -483,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -494,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

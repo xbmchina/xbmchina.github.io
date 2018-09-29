@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
+<meta name="description" content="一、Yarn简介： YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。">
 <meta name="keywords" content="大数据,Yarn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yarn使用教程">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/Yarn教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
-<meta property="og:description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
+<meta property="og:description" content="一、Yarn简介： YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-09-27T12:33:44.876Z">
+<meta property="og:updated_time" content="2018-09-29T14:15:15.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn使用教程">
-<meta name="twitter:description" content="####一、Yarn简介：  YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。   上图解析：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManag">
+<meta name="twitter:description" content="一、Yarn简介： YARN主要是将资源管理和作业监控拆分成了两个独立的服务：     1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -344,17 +344,16 @@
       
 
       
-        <p>####一、Yarn简介：</p>
-<blockquote>
+        <h4 id="一、Yarn简介："><a href="#一、Yarn简介：" class="headerlink" title="一、Yarn简介："></a>一、Yarn简介：</h4><blockquote>
 <p>YARN主要是将资源管理和作业监控拆分成了两个独立的服务：    </p>
 <pre><code>1.  ApplicationMaster:每个应用程序特有的，负责单个应用程序的管理。
  2. ResourceManager:一个全局的资源管理器，负责整个系统的资源管理和分配。
 </code></pre></blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/13150128-9b0470f29e9cefe9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Yarn原理图"></p>
+<a id="more"></a>
 <p><strong>上图解析</strong>：ResourceManager和NodeManager设计源自于数据计算框架。ResourceManager主要负责资源调度，而NodeManager是监控每一个台客户机器的cpu，内存，硬盘和网络状况，同时汇报给ResourceManager。</p>
 <p>主要概念介绍完了，如果想看更多可移步<a href="https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">官网</a></p>
-<p>####二、Yarn的安装和使用</p>
-<h6 id="前提：Hadoop已经安装完成，可参考安装教程"><a href="#前提：Hadoop已经安装完成，可参考安装教程" class="headerlink" title="前提：Hadoop已经安装完成，可参考安装教程"></a>前提：Hadoop已经安装完成，可参考<a href="https://www.jianshu.com/p/1461fdbfe456" target="_blank" rel="noopener">安装教程</a></h6><p>进入hadoop根目录，然后配置，基本上是MapReduce和yarn之间连接的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi   etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、Yarn的安装和使用"><a href="#二、Yarn的安装和使用" class="headerlink" title="二、Yarn的安装和使用"></a>二、Yarn的安装和使用</h4><h6 id="前提：Hadoop已经安装完成，可参考安装教程"><a href="#前提：Hadoop已经安装完成，可参考安装教程" class="headerlink" title="前提：Hadoop已经安装完成，可参考安装教程"></a>前提：Hadoop已经安装完成，可参考<a href="https://www.jianshu.com/p/1461fdbfe456" target="_blank" rel="noopener">安装教程</a></h6><p>进入hadoop根目录，然后配置，基本上是MapReduce和yarn之间连接的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi   etc/hadoop/mapred-site.xml</span><br></pre></td></tr></table></figure></p>
 <p><strong>填入下面的配置：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>接着</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi   etc/hadoop/yarn-site.xml</span><br></pre></td></tr></table></figure></p>
 <p><strong>填入下面的配置：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
@@ -484,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -495,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -539,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#前提：Hadoop已经安装完成，可参考安装教程"><span class="nav-number">1.</span> <span class="nav-text">前提：Hadoop已经安装完成，可参考安装教程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、Yarn简介："><span class="nav-number">1.</span> <span class="nav-text">一、Yarn简介：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Yarn的安装和使用"><span class="nav-number">2.</span> <span class="nav-text">二、Yarn的安装和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#前提：Hadoop已经安装完成，可参考安装教程"><span class="nav-number">2.0.1.</span> <span class="nav-text">前提：Hadoop已经安装完成，可参考安装教程</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

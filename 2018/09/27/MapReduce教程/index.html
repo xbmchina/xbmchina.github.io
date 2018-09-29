@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数">
+<meta name="description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。">
 <meta name="keywords" content="大数据,MapReduce">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MapReduce使用教程">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/MapReduce教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
-<meta property="og:description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数">
+<meta property="og:description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-972f87c375d0fd78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-4f3db79f1a787836.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-09-27T12:33:15.253Z">
+<meta property="og:updated_time" content="2018-09-29T14:12:33.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MapReduce使用教程">
-<meta name="twitter:description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数">
+<meta name="twitter:description" content="一、MapReduce是什么？ MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-972f87c375d0fd78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -346,7 +346,7 @@
 
       
         <h4 id="一、MapReduce是什么？"><a href="#一、MapReduce是什么？" class="headerlink" title="一、MapReduce是什么？"></a>一、MapReduce是什么？</h4><blockquote>
-<p>MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。<br>MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数据和计算任务，在集群节点上自动分配和执行任务以及收集计算结果，将数据分布存储、数据通信、容错处理等并行计算涉及到的很多系统底层的复杂细节交由系统负责处理，大大减少了软件开发人员的负担。</p>
+<p>MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。<a id="more"></a><br>MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数据和计算任务，在集群节点上自动分配和执行任务以及收集计算结果，将数据分布存储、数据通信、容错处理等并行计算涉及到的很多系统底层的复杂细节交由系统负责处理，大大减少了软件开发人员的负担。</p>
 </blockquote>
 <h4 id="二、MapReduce1-0-架构原理"><a href="#二、MapReduce1-0-架构原理" class="headerlink" title="二、MapReduce1.0 架构原理"></a>二、MapReduce1.0 架构原理</h4><p>MapReduce程序执行流程：<br><img src="https://upload-images.jianshu.io/upload_images/13150128-972f87c375d0fd78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="MapReduce1.x原理图.png"></p>
 <p><strong>解析：</strong><br><strong>2.1 JobTracker:JT</strong></p>
@@ -378,7 +378,6 @@
 <h5 id="2-编译"><a href="#2-编译" class="headerlink" title="2.编译"></a>2.编译</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//maven编译</span><br><span class="line"> mvn clean package -DskipTests</span><br></pre></td></tr></table></figure>
 <h5 id="3-上传到服务器"><a href="#3-上传到服务器" class="headerlink" title="3.上传到服务器"></a>3.上传到服务器</h5><p>  可以使用xshell软件或者MobaXterm等sftp上传</p>
 <h5 id="4-运行"><a href="#4-运行" class="headerlink" title="4.运行"></a>4.运行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hadoop jar /root/lib/learnHdfs-1.0-SNAPSHOT.jar com.zero.mapreduce.WordCountApp hdfs://hadoop01:8020/mylove.txt hdfs://hadoop01:8020/hdfsdat/wc/</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -499,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -510,7 +509,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

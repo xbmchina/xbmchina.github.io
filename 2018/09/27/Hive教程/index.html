@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="####一、Hive是什么？  Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。  Hive是建立在 Hadoop 上的数据仓库基础构架。它提供了一系列的工具，可以用来进行数">
+<meta name="description" content="一、Hive是什么？Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。">
 <meta name="keywords" content="大数据,Hive">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hive使用教程">
 <meta property="og:url" content="http://yoursite.com/2018/09/27/Hive教程/index.html">
 <meta property="og:site_name" content="ZeroBlog">
-<meta property="og:description" content="####一、Hive是什么？  Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。  Hive是建立在 Hadoop 上的数据仓库基础构架。它提供了一系列的工具，可以用来进行数">
+<meta property="og:description" content="一、Hive是什么？Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-09-27T12:33:52.977Z">
+<meta property="og:updated_time" content="2018-09-29T14:12:10.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hive使用教程">
-<meta name="twitter:description" content="####一、Hive是什么？  Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。  Hive是建立在 Hadoop 上的数据仓库基础构架。它提供了一系列的工具，可以用来进行数">
+<meta name="twitter:description" content="一、Hive是什么？Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。">
 
 
 
@@ -342,19 +342,13 @@
       
 
       
-        <p>####一、Hive是什么？</p>
-<blockquote>
-<p>Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。</p>
-</blockquote>
-<p>Hive是建立在 Hadoop 上的数据仓库基础构架。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL），这是一种可以存储、查询和分析存储在 Hadoop 中的大规模数据的机制。Hive 定义了简单的类 SQL 查询语言，称为 HQL，它允许熟悉 SQL 的用户查询数据。同时，这个语言也允许熟悉 MapReduce 开发者的开发自定义的 mapper 和 reducer 来处理内建的 mapper 和 reducer 无法完成的复杂的分析工作。</p>
-<p>####二、Hive工作原理（自己研究<a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted" target="_blank" rel="noopener">官网</a>呗）</p>
-<p>####三、Hive的安装<br><strong>下载hive-1.1.0-cdh5.7.0.tar.gz</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://archive.cloudera.com/cdh5/cdh/5/hive-1.1.0-cdh5.7.0.tar.gz</span><br></pre></td></tr></table></figure></p>
+        <h4 id="一、Hive是什么？"><a href="#一、Hive是什么？" class="headerlink" title="一、Hive是什么？"></a>一、Hive是什么？</h4><p>Hive起源于Facebook，它使得针对Hadoop进行SQL查询成为可能，从而非程序员也可以方便地使用。Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务运行。<br><a id="more"></a><br>Hive是建立在 Hadoop 上的数据仓库基础构架。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL），这是一种可以存储、查询和分析存储在 Hadoop 中的大规模数据的机制。Hive 定义了简单的类 SQL 查询语言，称为 HQL，它允许熟悉 SQL 的用户查询数据。同时，这个语言也允许熟悉 MapReduce 开发者的开发自定义的 mapper 和 reducer 来处理内建的 mapper 和 reducer 无法完成的复杂的分析工作。</p>
+<h4 id="二、Hive工作原理（自己研究官网呗）"><a href="#二、Hive工作原理（自己研究官网呗）" class="headerlink" title="二、Hive工作原理（自己研究官网呗）"></a>二、Hive工作原理（自己研究<a href="https://cwiki.apache.org/confluence/display/Hive/GettingStarted" target="_blank" rel="noopener">官网</a>呗）</h4><h4 id="三、Hive的安装"><a href="#三、Hive的安装" class="headerlink" title="三、Hive的安装"></a>三、Hive的安装</h4><p><strong>下载hive-1.1.0-cdh5.7.0.tar.gz</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://archive.cloudera.com/cdh5/cdh/5/hive-1.1.0-cdh5.7.0.tar.gz</span><br></pre></td></tr></table></figure></p>
 <p><strong>配置hive的环境变量</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
 <p><strong>conf/hive-env.sh配置</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HADOOP_HOME=/root/app/hadoop-2.6.0-cdh5.7.0</span><br></pre></td></tr></table></figure></p>
 <p><strong>配置hive-site.xml</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span><br><span class="line">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">    &lt;name&gt;javax.jdo.option.ConnectionURL&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;jdbc:mysql://127.0.0.1:3306/hive?createDatabaseIfNotExist=true&lt;/value&gt;</span><br><span class="line">        &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;root&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;xbm123456&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>关键的一步</strong><br>拷贝mysql-connector的jar包到hive_dir/lib中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar</span><br></pre></td></tr></table></figure></p>
-<p>####四、Hive的使用</p>
-<p><strong>hive基本操作</strong></p>
+<h4 id="四、Hive的使用"><a href="#四、Hive的使用" class="headerlink" title="四、Hive的使用"></a>四、Hive的使用</h4><p><strong>hive基本操作</strong></p>
 <p><strong>1. 创建表</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table hive_wordcount(context string);</span><br></pre></td></tr></table></figure></p>
 <p><strong>2. 加载数据到hive表</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOAD DATA LOCAL INPATH &apos;filepath&apos; INTO TABLE tablename;</span><br><span class="line"></span><br><span class="line">load data local inpath &apos;/root/data/hehe.txt&apos; into table hive_wordcount;</span><br><span class="line"></span><br><span class="line">select word ,count(1) from hive_wordcount lateral view explode(split(context,&apos;\t&apos;)) wc as word group by word;</span><br></pre></td></tr></table></figure></p>
 <p><strong>3. 练习</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">create table emp(</span><br><span class="line">    empno int,</span><br><span class="line">    ename string,</span><br><span class="line">    job  string,</span><br><span class="line">    mgr  int,</span><br><span class="line">    hiredate string,</span><br><span class="line">    sal double,</span><br><span class="line">    comm double,</span><br><span class="line">    deptno int</span><br><span class="line">  ) ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos;; </span><br><span class="line"></span><br><span class="line">create table dept(</span><br><span class="line">    deptno  int,</span><br><span class="line">    dname  string,</span><br><span class="line">    loc  string</span><br><span class="line">  )ROW FORMAT DELIMITED FIELDS TERMINATED BY &apos;\t&apos;;</span><br><span class="line"></span><br><span class="line">load data local inpath &apos;/root/data/emp.txt&apos; into table emp;</span><br><span class="line">load data local inpath &apos;/root/data/dept.txt&apos; into table dept;</span><br><span class="line"></span><br><span class="line">//求每个部门的人数</span><br><span class="line">select deptno,count(1) from emp group by deptno;</span><br></pre></td></tr></table></figure></p>
@@ -454,8 +448,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -470,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -481,7 +484,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -515,6 +518,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、Hive是什么？"><span class="nav-number">1.</span> <span class="nav-text">一、Hive是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Hive工作原理（自己研究官网呗）"><span class="nav-number">2.</span> <span class="nav-text">二、Hive工作原理（自己研究官网呗）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、Hive的安装"><span class="nav-number">3.</span> <span class="nav-text">三、Hive的安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、Hive的使用"><span class="nav-number">4.</span> <span class="nav-text">四、Hive的使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

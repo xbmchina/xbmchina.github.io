@@ -88,7 +88,7 @@
 <meta property="og:description" content="1.Spark Streaming简介1.1 Spark Streaming 是Spark核心API的一个扩展，可以实现高吞吐量的、具备容错机制的实时流数据的处理。支持从多种数据源获取数据，包括Kafk、Flume、Twitter、ZeroMQ、Kinesis 以及TCP sockets，从数据源获取数据之后，可以使用诸如map、reduce、join和window等高级函数进行复杂算法的处理。最">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="http://spark.apache.org/docs/latest/img/streaming-arch.png">
-<meta property="og:updated_time" content="2018-09-28T15:19:19.987Z">
+<meta property="og:updated_time" content="2018-09-29T14:11:27.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SparkSQL使用教程">
 <meta name="twitter:description" content="1.Spark Streaming简介1.1 Spark Streaming 是Spark核心API的一个扩展，可以实现高吞吐量的、具备容错机制的实时流数据的处理。支持从多种数据源获取数据，包括Kafk、Flume、Twitter、ZeroMQ、Kinesis 以及TCP sockets，从数据源获取数据之后，可以使用诸如map、reduce、join和window等高级函数进行复杂算法的处理。最">
@@ -344,8 +344,7 @@
       
 
       
-        <h5 id="1-Spark-Streaming简介"><a href="#1-Spark-Streaming简介" class="headerlink" title="1.Spark Streaming简介"></a>1.Spark Streaming简介</h5><p>1.1 Spark Streaming 是Spark核心API的一个扩展，可以实现高吞吐量的、具备容错机制的实时流数据的处理。支持从多种数据源获取数据，包括Kafk、Flume、Twitter、ZeroMQ、Kinesis 以及TCP sockets，从数据源获取数据之后，可以使用诸如map、reduce、join和window等高级函数进行复杂算法的处理。最后还可以将处理结果存储到文件系统，数据库和现场仪表盘。在“One Stack rule them all”的基础上，还可以使用Spark的其他子框架，如集群学习、图计算等，对流数据进行处理。</p>
-<p> Spark Streaming处理的数据流图：<br><img src="http://spark.apache.org/docs/latest/img/streaming-arch.png" alt="sparkStreaming"></p>
+        <h5 id="1-Spark-Streaming简介"><a href="#1-Spark-Streaming简介" class="headerlink" title="1.Spark Streaming简介"></a>1.Spark Streaming简介</h5><p>1.1 Spark Streaming 是Spark核心API的一个扩展，可以实现高吞吐量的、具备容错机制的实时流数据的处理。支持从多种数据源获取数据，包括Kafk、Flume、Twitter、ZeroMQ、Kinesis 以及TCP sockets，从数据源获取数据之后，可以使用诸如map、reduce、join和window等高级函数进行复杂算法的处理。最后还可以将处理结果存储到文件系统，数据库和现场仪表盘。在“One Stack rule them all”的基础上，还可以使用Spark的其他子框架，如集群学习、图计算等，对流数据进行处理。<br><a id="more"></a><br> Spark Streaming处理的数据流图：<br><img src="http://spark.apache.org/docs/latest/img/streaming-arch.png" alt="sparkStreaming"></p>
 <pre><code>Spark的各个子框架，都是基于核心Spark的，Spark Streaming在内部的处理机制是，接收实时流的数据，并根据一定的时间间隔拆分成一批批的数据，然后通过Spark Engine处理这些批数据，最终得到处理后的一批批结果数据。
 
 对应的批数据，在Spark内核对应一个RDD实例，因此，对应流数据的DStream可以看成是一组RDDs，即RDD的一个序列。通俗点理解的话，在流数据分成一批一批后，通过一个先进先出的队列，然后 Spark Engine从该队列中依次取出一个个批数据，把批数据封装成一个RDD，然后进行处理，这是一个典型的生产者消费者模型，对应的就有生产者消费者模型的问题，即如何协调生产速率和消费速率。
@@ -470,7 +469,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -481,7 +480,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
