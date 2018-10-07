@@ -322,186 +322,10 @@
 
       
         
-          
-            <h4 id="一-spring的简单使用"><a href="#一-spring的简单使用" class="headerlink" title="一. spring的简单使用"></a>一. spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>1.2. xml配置</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"myTestBean"</span> <span class="attr">class</span>=<span class="string">"com.zero.entity.MyTestBean"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>1.3. 测试</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSimpleLoad</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//1.读取配置文件bean.xml</span></span><br><span class="line">        BeanFactory bf = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> ClassPathResource(<span class="string">"com/zero/bean.xml"</span>));</span><br><span class="line">        <span class="comment">//2. 根据配置文件找到对应的类的配置，并实例化</span></span><br><span class="line">        MyTestBean bean = (MyTestBean) bf.getBean(<span class="string">"myTestBean"</span>);</span><br><span class="line">        <span class="comment">//调用实例化后的实例</span></span><br><span class="line">        assertEquals(<span class="string">"testStr"</span>,bean.getTestStr());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上三步就完成了spring的基本用法。</p>
-<h4 id="二-分析"><a href="#二-分析" class="headerlink" title="二. 分析"></a>二. 分析</h4><p><strong>2.1 XmlBeanFactory分析</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-07bbf736b916efcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="XmlBeanFactory.png"></p>
-<ul>
-<li>AliasRegistry:定义对alias的简单增删该操作等。</li>
-<li>SimpleAliasRegistry:主要使用map作为alias的缓存，并对接口AliasRegistry进行实现。</li>
-<li>SingletonBeanRegistry:定义对单例的注册及获取。</li>
-<li>BeanFactory: 定义获取bean及bean的各种属性。</li>
-<li>DefaultSingletonBeanRegistry:对接口SingletonBeanRegistry各函数的实现。</li>
-<li>HierarchicalBeanFactory：继承BeanFactory，也就是在BeanFactory定义的功能的基础上增加了对parentFacotry的支持。</li>
-<li>BeanDefinitionRegistry：定义对BeanDefinition的各种增删改操作。</li>
-<li>FactoryBeanRegistrySupport：在DefaultSingletonBeanRegistry基础上增加了对FactoryBean的特殊处理功能。</li>
-<li>ConfigurableBeanFactory：提供配置Factory的各种方法。</li>
-<li>ListableBeanFactory:根据各种条件获取bean的配置清单。</li>
-<li>AbstractBeanFactory:综合FactoryBeanRegistrySupport和ConfigurableBeanFactory的功能。</li>
-<li>AutowireCapableBeanFactory:提供创建bean、自动注入、初始化以及应用bean的后处理器。</li>
-<li>AbstractAutowireCapableBeanFactory:综合AbstractBeanFactory并对接口AutowireCapableBeanFactory进行实现。</li>
-<li><p>ConfigurableListableBeanFactory:BeanFactory配置清单，指定忽略类型及接口等。</p>
-</li>
-<li><p>DefaultListableBeanFactory:综合上面所有的功能，主要是对bean注册后的处理。</p>
-</li>
-<li>xmlBeanFactory中主要使用reader属性对资源文件进行读取和注册。</li>
-</ul>
-<p><strong>2.2 XmlBeanDefinitionReader分析</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-37e52c557847b735.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="XmlBeanDefinitionReader.png"></p>
-<ul>
-<li>BeanDefinitionReader:主要定义资源文件读取并转换为BeanDefinition的各个功能。</li>
-<li>EnvironmentCapable:定义获取Environment方法。</li>
-<li>AbstractBeanDefinitionReader：对EnvironmentCapable、BeanDefinitionReader类定义的功能进行实现。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/设计模式之命令和模板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZeroBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/设计模式之命令和模板/" itemprop="url">设计模式之命令和模板</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-29T22:19:00+08:00">
-                2018-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-命令模式"><a href="#1-命令模式" class="headerlink" title="1. 命令模式"></a>1. 命令模式</h4><p>经典的命令模式包括4个角色：</p>
-<p>Command：定义命令的统一接口</p>
-<p>ConcreteCommand：Command接口的实现者，用来执行具体的命令，某些情况下可以直接用来充当Receiver。</p>
-<p>Receiver：命令的实际执行者</p>
-<p>Invoker：命令的请求者，是命令模式中最重要的角色。这个角色用来对各个命令进行控制。<br>
+          <h4 id="一-spring的简单使用"><a href="#一-spring的简单使用" class="headerlink" title="一. spring的简单使用"></a>一. spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/29/设计模式之命令和模板/#more" rel="contents">
+            <a class="btn" href="/2018/10/07/spring源码学习（一）/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -648,6 +472,156 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/09/29/设计模式之观察和代理/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/设计模式之命令和模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeroBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/29/设计模式之命令和模板/" itemprop="url">设计模式之命令和模板</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-29T22:19:00+08:00">
+                2018-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="1-命令模式"><a href="#1-命令模式" class="headerlink" title="1. 命令模式"></a>1. 命令模式</h4><p>经典的命令模式包括4个角色：</p>
+<p>Command：定义命令的统一接口</p>
+<p>ConcreteCommand：Command接口的实现者，用来执行具体的命令，某些情况下可以直接用来充当Receiver。</p>
+<p>Receiver：命令的实际执行者</p>
+<p>Invoker：命令的请求者，是命令模式中最重要的角色。这个角色用来对各个命令进行控制。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/29/设计模式之命令和模板/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
