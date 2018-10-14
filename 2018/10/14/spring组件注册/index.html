@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-cn">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. @Configuration和@Bean @Configuration作用：告诉spring是个配置类 @Bean作用：给容器中注册一个Bean;类型就是返回值类型。id默认为方法名。例如 @Bean(“xixix”) //指定为xixix，修改name  2. @ComponentScan @ComponentScan(“com.zero”) //自动扫描@Controller、@Serv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spring组件注册">
+<meta property="og:url" content="http://yoursite.com/2018/10/14/spring组件注册/index.html">
+<meta property="og:site_name" content="ZeroBlog">
+<meta property="og:description" content="1. @Configuration和@Bean @Configuration作用：告诉spring是个配置类 @Bean作用：给容器中注册一个Bean;类型就是返回值类型。id默认为方法名。例如 @Bean(“xixix”) //指定为xixix，修改name  2. @ComponentScan @ComponentScan(“com.zero”) //自动扫描@Controller、@Serv">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-10-14T03:28:27.404Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="spring组件注册">
+<meta name="twitter:description" content="1. @Configuration和@Bean @Configuration作用：告诉spring是个配置类 @Bean作用：给容器中注册一个Bean;类型就是返回值类型。id默认为方法名。例如 @Bean(“xixix”) //指定为xixix，修改name  2. @ComponentScan @ComponentScan(“com.zero”) //自动扫描@Controller、@Serv">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/14/spring组件注册/"/>
+
+
+
+
+
+  <title>spring组件注册 | ZeroBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZeroBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">挑战人生无极限，攀登人生更高峰</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/spring组件注册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZeroBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">spring组件注册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T11:22:47+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-Configuration和-Bean"><a href="#1-Configuration和-Bean" class="headerlink" title="1. @Configuration和@Bean"></a>1. @Configuration和@Bean</h4><ol>
+<li>@Configuration作用：告诉spring是个配置类</li>
+<li>@Bean作用：给容器中注册一个Bean;类型就是返回值类型。id默认为方法名。例如 @Bean(“xixix”) //指定为xixix，修改name</li>
+</ol>
+<h4 id="2-ComponentScan"><a href="#2-ComponentScan" class="headerlink" title="2. @ComponentScan"></a>2. @ComponentScan</h4><ol>
+<li>@ComponentScan(“com.zero”) //自动扫描@Controller、@Service、@Repository</li>
+<li>excludeFilters:指定扫描的时候按照什么规则排除哪些组件</li>
+<li>includeFilters：指定扫描的时候只需包含哪些组件。使用时需要禁用默认的全扫描useDefaultFilters = false</li>
+</ol>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置类</span></span><br><span class="line"><span class="meta">@Configuration</span>  <span class="comment">//告诉spring是个配置类</span></span><br><span class="line"><span class="comment">//@ComponentScan("com.zero") //自动扫描@Controller、@Service、@Repository</span></span><br><span class="line"><span class="comment">//可以排除哪些注解不扫描。</span></span><br><span class="line"><span class="comment">//excludeFilters:指定扫描的时候按照什么规则排除哪些组件</span></span><br><span class="line"><span class="comment">//includeFilters：指定扫描的时候只需包含哪些组件。使用时需要禁用默认的全扫描useDefaultFilters = false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//FilterType.ANNOTATION   按照注解</span></span><br><span class="line"><span class="comment">//FilterType.ASSIGNABLE_TYPE 按照给定的类型</span></span><br><span class="line"><span class="comment">//FilterType.ASPECTJ        使用ASPECTJ表达式</span></span><br><span class="line"><span class="comment">//FilterType.REGEX          使用正则表达式</span></span><br><span class="line"><span class="comment">//FilterType.CUSTOM         使用自定义规则</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(value = <span class="string">"com.zero"</span>, includeFilters = &#123;</span><br><span class="line"><span class="comment">//        @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = &#123;Controller.class, Service.class&#125;)</span></span><br><span class="line"><span class="comment">//&#125;,</span></span><br><span class="line">        <span class="meta">@ComponentScan</span>.Filter(type = FilterType.CUSTOM, classes = &#123;MyTypeFilter.class&#125;)&#125;,</span><br><span class="line">        useDefaultFilters = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//@Bean 给容器中注册一个Bean;类型就是返回值类型。id默认为方法名</span></span><br><span class="line">    <span class="meta">@Bean</span>(<span class="string">"xixix"</span>) <span class="comment">//指定为xixix，修改name</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Cat <span class="title">cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Cat(<span class="string">"kathyrn"</span>, <span class="string">"skdjf"</span>, <span class="string">"girl"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>MyTypeFilter.java 自定义过滤规则</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*自定义过滤规则</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTypeFilter</span> <span class="keyword">implements</span> <span class="title">TypeFilter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">match</span><span class="params">(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();</span><br><span class="line"></span><br><span class="line">        ClassMetadata classMetadata = metadataReader.getClassMetadata();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Resource resource = metadataReader.getResource();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        String className = classMetadata.getClassName();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"----&gt;"</span>+className);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (className.contains(<span class="string">"er"</span>))&#123;<span class="comment">//自定义的过滤规则</span></span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;<span class="comment">//匹配成功则返回可扫描。</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-Scope和-Lazy"><a href="#3-Scope和-Lazy" class="headerlink" title="3. @Scope和@Lazy"></a>3. @Scope和@Lazy</h4><p>3.1 @Scope作用：<br>    prototype：多实例，每次获取的时候才会创建对象，而且每次获取重新new一次。<br>    singleton：单实例（默认值），ioc容器启动会调用方法创建ioc容器中，以后每次获取就是直接从容器（map.get()）中拿</p>
+<p>3.2 @Lazy作用：懒加载：单实例容器启动时不创建对象，直到第一次获取bean时才创建对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认是单实例的</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ConfigurableBeanFactory#SCOPE_PROTOTYPE   多实例</span></span><br><span class="line"><span class="comment"> * ConfigurableBeanFactory#SCOPE_SINGLETON   单实例</span></span><br><span class="line"><span class="comment"> * org.springframework.web.context.WebApplicationContext#SCOPE_REQUEST</span></span><br><span class="line"><span class="comment"> * org.springframework.web.context.WebApplicationContext#SCOPE_SESSION</span></span><br><span class="line"><span class="comment"> * prototype：多实例，每次获取的时候才会创建对象，而且每次获取重新new一次。</span></span><br><span class="line"><span class="comment"> * singleton：单实例（默认值），ioc容器启动会调用方法创建ioc容器中，以后每次获取就是直接从容器（map.get()）中拿</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Lazy</span> <span class="comment">//懒加载：单实例容器启动时不创建对象，直到第一次获取bean时才创建对象。</span></span><br><span class="line"><span class="meta">@Scope</span>(<span class="string">"singleton"</span>)</span><br><span class="line"><span class="meta">@Bean</span>(<span class="string">"cat"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Cat <span class="title">cat</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"新建了bean。。。。。。。。。。"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Cat(<span class="string">"xixi"</span>,<span class="string">"xigjd"</span>,<span class="string">"girl"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-Conditional"><a href="#4-Conditional" class="headerlink" title="4. @Conditional"></a>4. @Conditional</h4><p>@Conditional按条件进行加载Bean</p>
+<p>LinuxCondition.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinuxCondition</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * ConditionContext 判断条件能使用的上下文</span></span><br><span class="line"><span class="comment">     * AnnotatedTypeMetadata 注释信息。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> context</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> metadata</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext context, AnnotatedTypeMetadata metadata)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.能获取ioc使用的beanFactory</span></span><br><span class="line">        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();</span><br><span class="line">        <span class="comment">//2.获取类加载器</span></span><br><span class="line">        ClassLoader classLoader = context.getClassLoader();</span><br><span class="line">        <span class="comment">//3.获取当前环境信息</span></span><br><span class="line">        Environment environment = context.getEnvironment();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.获取到bean定义的注册类</span></span><br><span class="line">        BeanDefinitionRegistry registry = context.getRegistry();</span><br><span class="line"></span><br><span class="line">        String property = environment.getProperty(<span class="string">"os.name"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (property.contains(<span class="string">"Linux"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>WindowsCondition.java<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WindowsCondition</span> <span class="keyword">implements</span> <span class="title">Condition</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * ConditionContext 判断条件能使用的上下文</span></span><br><span class="line"><span class="comment">     * AnnotatedTypeMetadata 注释信息。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> context</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> metadata</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">matches</span><span class="params">(ConditionContext context, AnnotatedTypeMetadata metadata)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.能获取ioc使用的beanFactory</span></span><br><span class="line">        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();</span><br><span class="line">        <span class="comment">//2.获取类加载器</span></span><br><span class="line">        ClassLoader classLoader = context.getClassLoader();</span><br><span class="line">        <span class="comment">//3.获取当前环境信息</span></span><br><span class="line">        Environment environment = context.getEnvironment();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.获取到bean定义的注册类</span></span><br><span class="line">        BeanDefinitionRegistry registry = context.getRegistry();</span><br><span class="line"></span><br><span class="line">        String property = environment.getProperty(<span class="string">"os.name"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (property.contains(<span class="string">"Windows"</span>))&#123;</span><br><span class="line">            <span class="keyword">return</span>  <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注入相关类。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Conditional</span>(&#123;WindowsCondition.class&#125;)</span><br><span class="line"><span class="meta">@Bean</span>(<span class="string">"bill"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Cat <span class="title">cat1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"给容器中添加cat。。。。。"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Cat(<span class="string">"34"</span>,<span class="string">"Bill Gates"</span>,<span class="string">"boy"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@Conditional</span>(&#123;LinuxCondition.class&#125;)</span><br><span class="line"><span class="meta">@Bean</span>(<span class="string">"linux"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Cat <span class="title">cat2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"给容器中添加cat。。。。。"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Cat(<span class="string">"112"</span>,<span class="string">"linux"</span>,<span class="string">"girl"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="5-Import、ImportSelector、ImportBeanDefinition、FactoryBean"><a href="#5-Import、ImportSelector、ImportBeanDefinition、FactoryBean" class="headerlink" title="5. @Import、ImportSelector、ImportBeanDefinition、FactoryBean"></a>5. @Import、ImportSelector、ImportBeanDefinition、FactoryBean</h4><p>@Import[快速给容器中导一个组件]</p>
+<ul>
+<li>a) @Import（需要导入到容器中的组件）：容器入就会自动注册该组件</li>
+<li>b) @ImportSelector:返回需要导入的组件的全类名</li>
+<li>c)@ImportBeanDefinitions</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Import</span>(&#123;Color.class, Red.class, MyImportSelector.class&#125;)</span><br><span class="line"><span class="comment">//@Import导入组件、id默认是组件的全类名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line">        ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用ImportSelector<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyImportSelector</span> <span class="keyword">implements</span> <span class="title">ImportSelector</span> </span>&#123;</span><br><span class="line">    <span class="comment">//返回值，就是导入到容器中的组件的全类名</span></span><br><span class="line">    <span class="comment">//AnnotationMetadata：当前标注@Import注解的所有注解信息。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String[] selectImports(AnnotationMetadata importingClassMetadata) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String[]&#123;<span class="string">"com.zero.bean.Blue"</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用ImportBeanDefinition<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyImportBeanDefinitions</span> <span class="keyword">implements</span> <span class="title">ImportBeanDefinitionRegistrar</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * AnnotationMetadata：   当前类的注解注册信息</span></span><br><span class="line"><span class="comment">     * BeanDefinitionRegistry：BeanDefinition注册类</span></span><br><span class="line"><span class="comment">     * 把所有需要添加到容器中的bean，调用BeanDefinitionRegistry的registerBeanDefinition方法</span></span><br><span class="line"><span class="comment">     * 进行手工注册。</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> importingClassMetadata</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerBeanDefinitions</span><span class="params">(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> red = registry.containsBeanDefinition(<span class="string">"com.zero.bean.Red"</span>);</span><br><span class="line">        <span class="keyword">boolean</span> blue = registry.containsBeanDefinition(<span class="string">"com.zero.bean.Blue"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (red &amp;&amp; blue) &#123;</span><br><span class="line">            RootBeanDefinition rootBeanDefinition = <span class="keyword">new</span> RootBeanDefinition(Rainbow.class);</span><br><span class="line">            registry.registerBeanDefinition(<span class="string">"rainBow"</span>,rootBeanDefinition);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用spring提供的FactoryBean(工厂Bean);</p>
+<ul>
+<li>a) 默认获取到的是工厂Bean调用getObject创建的对象</li>
+<li>b) 要获取工厂Bean本身，我们需要给id前面加一个&amp;，例如 &amp;colorFactoryBean</li>
+</ul>
+<p>FactoryBean的方式进行加载<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ColorFactoryBean</span> <span class="keyword">implements</span> <span class="title">FactoryBean</span>&lt;<span class="title">Color</span>&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//返回一个Color对象，这个对象会添加到容器中</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Color <span class="title">getObject</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Color();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Class&lt;?&gt; getObjectType() &#123;</span><br><span class="line">        <span class="keyword">return</span> Color.class;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//是单例？</span></span><br><span class="line">    <span class="comment">//true：这个bean是单实例的,在容器中保存一份。</span></span><br><span class="line">    <span class="comment">//false：多实例，每次获取都会创建一个实例。</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>将javaBean注入到容器中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ColorFactoryBean <span class="title">colorFactoryBean</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>  <span class="keyword">new</span> ColorFactoryBean();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p> <strong>给容器中注册组件</strong></p>
+<ol>
+<li><strong>@ComponentScan</strong>包扫描+组件标注注解（<strong>@Controller</strong>/<strong>@Service</strong>/<strong>@Repository</strong>/<strong>@Compoment</strong>）</li>
+<li><strong>@Bean</strong>[导入第三方包里面的组件]</li>
+<li><strong>@Import</strong>[快速给容器中导一个组件],<br> a) <strong>@Import</strong>（需要导入到容器中的组件）：容器入就会自动注册该组件<br> b) <strong>@ImportSelector</strong>:返回需要导入的组件的全类名<br> c) <strong>@ImportBeanDefinitions</strong></li>
+<li>使用spring提供的FactoryBean(工厂Bean);<br> a) 默认获取到的是工厂Bean调用getObject创建的对象<br> b) 要获取工厂Bean本身，我们需要给id前面加一个&amp;，例如&amp;colorFactoryBean</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/07/spring源码学习（一）/" rel="next" title="spring源码学习（一）">
+                <i class="fa fa-chevron-left"></i> spring源码学习（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="zero" />
+            
+              <p class="site-author-name" itemprop="name">zero</p>
+              <p class="site-description motion-element" itemprop="description">Everthing will going to be all right.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Configuration和-Bean"><span class="nav-number">1.</span> <span class="nav-text">1. @Configuration和@Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ComponentScan"><span class="nav-number">2.</span> <span class="nav-text">2. @ComponentScan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Scope和-Lazy"><span class="nav-number">3.</span> <span class="nav-text">3. @Scope和@Lazy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Conditional"><span class="nav-number">4.</span> <span class="nav-text">4. @Conditional</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Import、ImportSelector、ImportBeanDefinition、FactoryBean"><span class="nav-number">5.</span> <span class="nav-text">5. @Import、ImportSelector、ImportBeanDefinition、FactoryBean</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zero</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
