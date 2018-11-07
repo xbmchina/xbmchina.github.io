@@ -252,6 +252,445 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/asyncSupported/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZERO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/asyncSupported/" itemprop="url">asyncSupported</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T22:45:00+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring源码/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring源码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>@WebServlet<br>@WebServlet 用于将一个类声明为 Servlet，该注解将会在部署时被容器处理，容器将根据具体的属性配置将相应的类部署为 Servlet。该注解具有下表给出的一些常用属性（以下所有属性均为可选属性，但是 vlaue 或者 urlPatterns 通常是必需的，且二者不能共存，如果同时指定，通常是忽略 value 的取值）</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/07/asyncSupported/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/ServletContainerInitializer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZERO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/ServletContainerInitializer/" itemprop="url">ServletContainerInitializer</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T22:33:00+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring源码/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring源码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p> 在web容器启动时为提供给第三方组件机会做一些初始化的工作，例如注册》servlet或者filtes等，servlet规范中通过ServletContainerInitializer实现此功能。<br>每个框架要使用ServletContainerInitializer就必须在对应的jar包的META-INF/services 目录创建一个名为javax.servlet.ServletContainerInitializer的文件，文件内容指定具体的ServletContainerInitializer实现类。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/07/ServletContainerInitializer/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/ApplicationListener/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZERO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/07/ApplicationListener/" itemprop="url">ApplicationListener</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-07T21:14:00+08:00">
+                2018-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring源码/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring源码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>ApplicationListener：监听容器中发布的事件。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p><strong>MyApplicationListener.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplicationListener</span> <span class="keyword">implements</span> <span class="title">ApplicationListener</span>&lt;<span class="title">ApplicationEvent</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//当容器中发布此事件以后，方法触发</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onApplicationEvent</span><span class="params">(ApplicationEvent event)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"收到事件："</span>+event);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/07/ApplicationListener/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/BeanPostProcessor使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -344,7 +783,7 @@
 
       
         
-          <h4 id="1-BeanPostProcessor简介"><a href="#1-BeanPostProcessor简介" class="headerlink" title="1. BeanPostProcessor简介"></a>1. BeanPostProcessor简介</h4><p>BeanPostProcessor是Spring IOC容器给我们提供的一个扩展接口。接口声明如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BeanPostProcessor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//bean初始化方法调用前被调用</span></span><br><span class="line">    <span class="function">Object <span class="title">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line">    <span class="comment">//bean初始化方法调用后被调用</span></span><br><span class="line">    <span class="function">Object <span class="title">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <h4 id="BeanPostProcessor简介"><a href="#BeanPostProcessor简介" class="headerlink" title="BeanPostProcessor简介"></a>BeanPostProcessor简介</h4><p>BeanPostProcessor是Spring IOC容器给我们提供的一个扩展接口。接口声明如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BeanPostProcessor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//bean初始化方法调用前被调用</span></span><br><span class="line">    <span class="function">Object <span class="title">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line">    <span class="comment">//bean初始化方法调用后被调用</span></span><br><span class="line">    <span class="function">Object <span class="title">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/11/05/BeanPostProcessor使用/#more" rel="contents">
@@ -490,8 +929,8 @@
 
       
         
-          <h4 id="一-AOP定义"><a href="#一-AOP定义" class="headerlink" title="一. AOP定义"></a>一. AOP定义</h4><p>AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。</p>
-<h4 id="二-AOP流程"><a href="#二-AOP流程" class="headerlink" title="二. AOP流程"></a>二. AOP流程</h4><ol>
+          <h4 id="AOP定义"><a href="#AOP定义" class="headerlink" title="AOP定义"></a>AOP定义</h4><p>AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。</p>
+<h4 id="AOP流程"><a href="#AOP流程" class="headerlink" title="AOP流程"></a>AOP流程</h4><ol>
 <li>导入aop模块：Spring AOP(spring-aspects)</li>
 <li><p>定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）</p>
 </li>
@@ -641,7 +1080,7 @@
 
       
         
-          <h4 id="1-AutoWired，自动注入："><a href="#1-AutoWired，自动注入：" class="headerlink" title="1. @AutoWired，自动注入："></a>1. @AutoWired，自动注入：</h4><h5 id="1-1-Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><a href="#1-1-Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。" class="headerlink" title="1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。"></a>1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</h5><ul>
+          <h4 id="AutoWired，自动注入："><a href="#AutoWired，自动注入：" class="headerlink" title="@AutoWired，自动注入："></a>@AutoWired，自动注入：</h4><h5 id="Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><a href="#Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。" class="headerlink" title="Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。"></a>Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</h5><ul>
 <li>a、默认优先按照<strong>【类型】</strong>去容器中找对应的组件：application.getBean(CarDao.class);</li>
 <li>b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”)</li>
 <li>c、@Qualifier(“carDao”),使用Qualifier指定需要装配的组件的id，而不是使用属性名</li>
@@ -792,7 +1231,7 @@
 
       
         
-          <h4 id="1-Value"><a href="#1-Value" class="headerlink" title="1. @Value"></a>1. @Value</h4><p>支持三种方式：</p>
+          <h4 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h4><p>支持三种方式：</p>
 <ol>
 <li>基本数值</li>
 <li>可以写SpEL: #{}</li>
@@ -943,8 +1382,8 @@
 
       
         
-          <h4 id="1-Bean初始化和销毁"><a href="#1-Bean初始化和销毁" class="headerlink" title="1. @Bean初始化和销毁"></a>1. @Bean初始化和销毁</h4><h5 id="1-1-bean的生命周期："><a href="#1-1-bean的生命周期：" class="headerlink" title="1.1 bean的生命周期："></a>1.1 bean的生命周期：</h5><p>&emsp;&emsp;bean创建—–初始化—–销毁的过程</p>
-<h5 id="1-2-容器管理bean的生命周期："><a href="#1-2-容器管理bean的生命周期：" class="headerlink" title="1.2  容器管理bean的生命周期："></a>1.2  容器管理bean的生命周期：</h5><p> &emsp;&emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。<br>
+          <h4 id="Bean初始化和销毁"><a href="#Bean初始化和销毁" class="headerlink" title="@Bean初始化和销毁"></a>@Bean初始化和销毁</h4><h5 id="bean的生命周期："><a href="#bean的生命周期：" class="headerlink" title="bean的生命周期："></a>bean的生命周期：</h5><p>&emsp;&emsp;bean创建—–初始化—–销毁的过程</p>
+<h5 id="容器管理bean的生命周期："><a href="#容器管理bean的生命周期：" class="headerlink" title="容器管理bean的生命周期："></a>容器管理bean的生命周期：</h5><p> &emsp;&emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/10/14/Spring生命周期/#more" rel="contents">
@@ -1090,11 +1529,11 @@
 
       
         
-          <h4 id="1-Configuration和-Bean"><a href="#1-Configuration和-Bean" class="headerlink" title="1. @Configuration和@Bean"></a>1. @Configuration和@Bean</h4><ol>
+          <h4 id="Configuration和-Bean"><a href="#Configuration和-Bean" class="headerlink" title="@Configuration和@Bean"></a>@Configuration和@Bean</h4><ol>
 <li>@Configuration作用：告诉spring是个配置类</li>
 <li>@Bean作用：给容器中注册一个Bean;类型就是返回值类型。id默认为方法名。例如 @Bean(“xixix”) //指定为xixix，修改name</li>
 </ol>
-<h4 id="2-ComponentScan"><a href="#2-ComponentScan" class="headerlink" title="2. @ComponentScan"></a>2. @ComponentScan</h4><ol>
+<h4 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h4><ol>
 <li>@ComponentScan(“com.zero”) //自动扫描@Controller、@Service、@Repository</li>
 <li>excludeFilters:指定扫描的时候按照什么规则排除哪些组件</li>
 <li>includeFilters：指定扫描的时候只需包含哪些组件。使用时需要禁用默认的全扫描useDefaultFilters = false</li>
@@ -1171,7 +1610,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/07/spring源码学习（一）/" itemprop="url">spring源码学习（一）</a></h1>
+                <a class="post-title-link" href="/2018/10/07/spring源码学习（一）/" itemprop="url">spring入门</a></h1>
         
 
         <div class="post-meta">
@@ -1244,452 +1683,10 @@
 
       
         
-          <h4 id="一-spring的简单使用"><a href="#一-spring的简单使用" class="headerlink" title="一. spring的简单使用"></a>一. spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <h4 id="spring的简单使用"><a href="#spring的简单使用" class="headerlink" title="spring的简单使用"></a>spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/10/07/spring源码学习（一）/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/设计模式之观察和代理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZERO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/设计模式之观察和代理/" itemprop="url">设计模式之观察和代理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-29T22:19:00+08:00">
-                2018-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-观察者模式"><a href="#1-观察者模式" class="headerlink" title="1.观察者模式"></a>1.观察者模式</h4><p>其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/29/设计模式之观察和代理/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/设计模式之命令和模板/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZERO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/设计模式之命令和模板/" itemprop="url">设计模式之命令和模板</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-29T22:19:00+08:00">
-                2018-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-命令模式"><a href="#1-命令模式" class="headerlink" title="1. 命令模式"></a>1. 命令模式</h4><p>经典的命令模式包括4个角色：</p>
-<p>Command：定义命令的统一接口</p>
-<p>ConcreteCommand：Command接口的实现者，用来执行具体的命令，某些情况下可以直接用来充当Receiver。</p>
-<p>Receiver：命令的实际执行者</p>
-<p>Invoker：命令的请求者，是命令模式中最重要的角色。这个角色用来对各个命令进行控制。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/29/设计模式之命令和模板/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/设计模式之适配和装饰/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZERO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/设计模式之适配和装饰/" itemprop="url">设计模式之适配和装饰</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-29T22:18:00+08:00">
-                2018-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="1-适配器模式"><a href="#1-适配器模式" class="headerlink" title="1. 适配器模式"></a>1. 适配器模式</h4><p> 通过一个简单的例子说一下适配器模式，适配器模式属于接口型模式。适配器模式的意图在于，使用不同接口的类所提供的服务为客户端提供。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/29/设计模式之适配和装饰/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1781,7 +1778,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1803,7 +1800,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

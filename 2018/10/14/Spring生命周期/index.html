@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1. @Bean初始化和销毁1.1 bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 1.2  容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
+<meta name="description" content="@Bean初始化和销毁bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring生命周期">
 <meta property="og:url" content="http://yoursite.com/2018/10/14/Spring生命周期/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="1. @Bean初始化和销毁1.1 bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 1.2  容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
+<meta property="og:description" content="@Bean初始化和销毁bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-10-14T14:21:26.475Z">
+<meta property="og:updated_time" content="2018-11-07T14:50:56.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring生命周期">
-<meta name="twitter:description" content="1. @Bean初始化和销毁1.1 bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 1.2  容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
+<meta name="twitter:description" content="@Bean初始化和销毁bean的生命周期：&amp;emsp;&amp;emsp;bean创建—–初始化—–销毁的过程 容器管理bean的生命周期： &amp;emsp;&amp;emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。">
 
 
 
@@ -341,8 +341,8 @@
       
 
       
-        <h4 id="1-Bean初始化和销毁"><a href="#1-Bean初始化和销毁" class="headerlink" title="1. @Bean初始化和销毁"></a>1. @Bean初始化和销毁</h4><h5 id="1-1-bean的生命周期："><a href="#1-1-bean的生命周期：" class="headerlink" title="1.1 bean的生命周期："></a>1.1 bean的生命周期：</h5><p>&emsp;&emsp;bean创建—–初始化—–销毁的过程</p>
-<h5 id="1-2-容器管理bean的生命周期："><a href="#1-2-容器管理bean的生命周期：" class="headerlink" title="1.2  容器管理bean的生命周期："></a>1.2  容器管理bean的生命周期：</h5><p> &emsp;&emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。<br> <a id="more"></a></p>
+        <h4 id="Bean初始化和销毁"><a href="#Bean初始化和销毁" class="headerlink" title="@Bean初始化和销毁"></a>@Bean初始化和销毁</h4><h5 id="bean的生命周期："><a href="#bean的生命周期：" class="headerlink" title="bean的生命周期："></a>bean的生命周期：</h5><p>&emsp;&emsp;bean创建—–初始化—–销毁的过程</p>
+<h5 id="容器管理bean的生命周期："><a href="#容器管理bean的生命周期：" class="headerlink" title="容器管理bean的生命周期："></a>容器管理bean的生命周期：</h5><p> &emsp;&emsp;我们可以自定义初始化和销毁方法：容器在bean进行到当前生命周期的时候来调用我们自定义的初始化和销毁方法。<br> <a id="more"></a></p>
 <p> &emsp;<strong>构造函数</strong>：</p>
 <p> &emsp;单实例：容器创建时进行初始化</p>
 <p>&emsp;多实例：在每次获取的时候创建对象</p>
@@ -365,7 +365,7 @@
 <p><strong>b. InitializingBean和DisposableBean 的使用</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Android</span> <span class="keyword">implements</span> <span class="title">InitializingBean</span>,<span class="title">DisposableBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Android</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"android constructor......."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"android destroy........"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterPropertiesSet</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"android afterPropertiesSet........"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>c. @PostConstruct和@PreDestroy的使用</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AIIphone</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AIIphone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"AIIphone.... contruct..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostConstruct</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"AIIphone.....PostConstruct"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@PreDestroy</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"AIIphone......PreDestroy"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-BeanPostProcessor后置处理器"><a href="#2-BeanPostProcessor后置处理器" class="headerlink" title="2. BeanPostProcessor后置处理器"></a>2. BeanPostProcessor后置处理器</h4><p><strong>BeanPostProcessor【interface】</strong>：</p>
+<h4 id="BeanPostProcessor后置处理器"><a href="#BeanPostProcessor后置处理器" class="headerlink" title="BeanPostProcessor后置处理器"></a>BeanPostProcessor后置处理器</h4><p><strong>BeanPostProcessor【interface】</strong>：</p>
 <p>bean的后置处理器：<br>在bean初始化前后进行一些处理工作。</p>
 <p> &emsp;1. postProcessBeforeInitialization:在初始化之前工作</p>
 <p> &emsp;2. postProcessAfterInitialization:在初始化之后工作</p>
@@ -486,7 +486,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -508,7 +508,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -541,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Bean初始化和销毁"><span class="nav-number">1.</span> <span class="nav-text">1. @Bean初始化和销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-bean的生命周期："><span class="nav-number">1.1.</span> <span class="nav-text">1.1 bean的生命周期：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-容器管理bean的生命周期："><span class="nav-number">1.2.</span> <span class="nav-text">1.2  容器管理bean的生命周期：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-BeanPostProcessor后置处理器"><span class="nav-number">2.</span> <span class="nav-text">2. BeanPostProcessor后置处理器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bean初始化和销毁"><span class="nav-number">1.</span> <span class="nav-text">@Bean初始化和销毁</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#bean的生命周期："><span class="nav-number">1.1.</span> <span class="nav-text">bean的生命周期：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#容器管理bean的生命周期："><span class="nav-number">1.2.</span> <span class="nav-text">容器管理bean的生命周期：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanPostProcessor后置处理器"><span class="nav-number">2.</span> <span class="nav-text">BeanPostProcessor后置处理器</span></a></li></ol></div>
             
 
           </div>

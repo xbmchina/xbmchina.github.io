@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="一. spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setT">
+<meta name="description" content="spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setTest">
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring源码学习（一）">
+<meta property="og:title" content="spring入门">
 <meta property="og:url" content="http://yoursite.com/2018/10/07/spring源码学习（一）/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="一. spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setT">
+<meta property="og:description" content="spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setTest">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-07bbf736b916efcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-37e52c557847b735.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-10-14T14:20:17.840Z">
+<meta property="og:updated_time" content="2018-11-07T14:52:21.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring源码学习（一）">
-<meta name="twitter:description" content="一. spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setT">
+<meta name="twitter:title" content="spring入门">
+<meta name="twitter:description" content="spring的简单使用1.1. javaBean123456789101112public class MyTestBean &amp;#123;    private String testStr  =&quot;testStr&quot;;    public String getTestStr()&amp;#123;        return testStr;    &amp;#125;    public void setTest">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-07bbf736b916efcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>spring源码学习（一） | ZERO</title>
+  <title>spring入门 | ZERO</title>
   
 
 
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">spring源码学习（一）</h1>
+          <h1 class="post-title" itemprop="name headline">spring入门</h1>
         
 
         <div class="post-meta">
@@ -345,12 +345,12 @@
       
 
       
-        <h4 id="一-spring的简单使用"><a href="#一-spring的简单使用" class="headerlink" title="一. spring的简单使用"></a>一. spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h4 id="spring的简单使用"><a href="#spring的简单使用" class="headerlink" title="spring的简单使用"></a>spring的简单使用</h4><p><strong>1.1. javaBean</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String testStr  =<span class="string">"testStr"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTestStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> testStr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTestStr</span><span class="params">(String testStr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.testStr = testStr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p><strong>1.2. xml配置</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"myTestBean"</span> <span class="attr">class</span>=<span class="string">"com.zero.entity.MyTestBean"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ... --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>1.3. 测试</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSimpleLoad</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//1.读取配置文件bean.xml</span></span><br><span class="line">        BeanFactory bf = <span class="keyword">new</span> XmlBeanFactory(<span class="keyword">new</span> ClassPathResource(<span class="string">"com/zero/bean.xml"</span>));</span><br><span class="line">        <span class="comment">//2. 根据配置文件找到对应的类的配置，并实例化</span></span><br><span class="line">        MyTestBean bean = (MyTestBean) bf.getBean(<span class="string">"myTestBean"</span>);</span><br><span class="line">        <span class="comment">//调用实例化后的实例</span></span><br><span class="line">        assertEquals(<span class="string">"testStr"</span>,bean.getTestStr());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>以上三步就完成了spring的基本用法。</p>
-<h4 id="二-分析"><a href="#二-分析" class="headerlink" title="二. 分析"></a>二. 分析</h4><p><strong>2.1 XmlBeanFactory分析</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-07bbf736b916efcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="XmlBeanFactory.png"></p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p><strong>2.1 XmlBeanFactory分析</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-07bbf736b916efcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="XmlBeanFactory.png"></p>
 <ul>
 <li>AliasRegistry:定义对alias的简单增删该操作等。</li>
 <li>SimpleAliasRegistry:主要使用map作为alias的缓存，并对接口AliasRegistry进行实现。</li>
@@ -407,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/29/设计模式之观察和代理/" rel="next" title="设计模式之观察和代理">
-                <i class="fa fa-chevron-left"></i> 设计模式之观察和代理
+              <a href="/2018/09/29/设计模式之命令和模板/" rel="next" title="设计模式之命令和模板">
+                <i class="fa fa-chevron-left"></i> 设计模式之命令和模板
               </a>
             
           </div>
@@ -500,7 +500,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -522,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -555,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-spring的简单使用"><span class="nav-number">1.</span> <span class="nav-text">一. spring的简单使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-分析"><span class="nav-number">2.</span> <span class="nav-text">二. 分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#spring的简单使用"><span class="nav-number">1.</span> <span class="nav-text">spring的简单使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li></ol></div>
             
 
           </div>

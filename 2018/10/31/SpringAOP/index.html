@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一. AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 二. AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知Mat">
+<meta name="description" content="AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知MathCalcu">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringAOP">
 <meta property="og:url" content="http://yoursite.com/2018/10/31/SpringAOP/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="一. AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 二. AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知Mat">
+<meta property="og:description" content="AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知MathCalcu">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-10-31T14:46:57.694Z">
+<meta property="og:updated_time" content="2018-11-07T14:49:16.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringAOP">
-<meta name="twitter:description" content="一. AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 二. AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知Mat">
+<meta name="twitter:description" content="AOP定义AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。 AOP流程 导入aop模块：Spring AOP(spring-aspects) 定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）  定义一个日志切面类（LogAspects）：切面类里面的方法需要动态感知MathCalcu">
 
 
 
@@ -342,8 +342,8 @@
       
 
       
-        <h4 id="一-AOP定义"><a href="#一-AOP定义" class="headerlink" title="一. AOP定义"></a>一. AOP定义</h4><p>AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。</p>
-<h4 id="二-AOP流程"><a href="#二-AOP流程" class="headerlink" title="二. AOP流程"></a>二. AOP流程</h4><ol>
+        <h4 id="AOP定义"><a href="#AOP定义" class="headerlink" title="AOP定义"></a>AOP定义</h4><p>AOP指在程序运行期间动态的将某段代码切入到指定方法指定位置运行的编程方式。</p>
+<h4 id="AOP流程"><a href="#AOP流程" class="headerlink" title="AOP流程"></a>AOP流程</h4><ol>
 <li>导入aop模块：Spring AOP(spring-aspects)</li>
 <li><p>定义一个业务逻辑类（MathCalculator）：在业务逻辑运行的时候将日志进行打印（方法之前、方法运行结束、方法出现异常、xxxx）</p>
 </li>
@@ -365,7 +365,7 @@
 </ol>
 <p>6.必须告诉spring哪个类是切面类（给切面类加一个注解@Aspect）</p>
 <p>7、给配置类中加 @EnableAspectJAutoProxy 【开启基于注解的aop模式】在Spring中很多的@EnableXXX;</p>
-<h4 id="三-AOP实例"><a href="#三-AOP实例" class="headerlink" title="三. AOP实例"></a>三. AOP实例</h4><p>1)、将业务逻辑组件和切面类都加入到容器中；告诉spring哪个是切面类（@Aspect）</p>
+<h4 id="AOP实例"><a href="#AOP实例" class="headerlink" title="AOP实例"></a>AOP实例</h4><p>1)、将业务逻辑组件和切面类都加入到容器中；告诉spring哪个是切面类（@Aspect）</p>
 <p>2)、在切面类上的每一个通知方法上标注通知注解，告诉spring何时何地运行（切入点表达式）</p>
 <p>3)、开启基于注解的aop模式：@EnableAspectJAutoProxy</p>
 <p><strong>MainConfigOfAOP.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@EnableAspectJAutoProxy</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfigOfAOP</span> </span>&#123;</span><br><span class="line">	 </span><br><span class="line">	<span class="comment">//业务逻辑类加入容器中</span></span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> MathCalculator <span class="title">calculator</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> MathCalculator();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//切面类加入到容器中</span></span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> LogAspects <span class="title">logAspects</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> LogAspects();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -495,7 +495,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -517,7 +517,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -550,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-AOP定义"><span class="nav-number">1.</span> <span class="nav-text">一. AOP定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-AOP流程"><span class="nav-number">2.</span> <span class="nav-text">二. AOP流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-AOP实例"><span class="nav-number">3.</span> <span class="nav-text">三. AOP实例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#AOP定义"><span class="nav-number">1.</span> <span class="nav-text">AOP定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOP流程"><span class="nav-number">2.</span> <span class="nav-text">AOP流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOP实例"><span class="nav-number">3.</span> <span class="nav-text">AOP实例</span></a></li></ol></div>
             
 
           </div>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. @AutoWired，自动注入：1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qual">
+<meta name="description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring自动装配">
 <meta property="og:url" content="http://yoursite.com/2018/10/14/Spring自动装配/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="1. @AutoWired，自动注入：1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qual">
+<meta property="og:description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-10-14T14:29:28.625Z">
+<meta property="og:updated_time" content="2018-11-07T14:50:04.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring自动装配">
-<meta name="twitter:description" content="1. @AutoWired，自动注入：1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qual">
+<meta name="twitter:description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
 
 
 
@@ -342,7 +342,7 @@
       
 
       
-        <h4 id="1-AutoWired，自动注入："><a href="#1-AutoWired，自动注入：" class="headerlink" title="1. @AutoWired，自动注入："></a>1. @AutoWired，自动注入：</h4><h5 id="1-1-Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><a href="#1-1-Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。" class="headerlink" title="1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。"></a>1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</h5><ul>
+        <h4 id="AutoWired，自动注入："><a href="#AutoWired，自动注入：" class="headerlink" title="@AutoWired，自动注入："></a>@AutoWired，自动注入：</h4><h5 id="Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><a href="#Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。" class="headerlink" title="Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。"></a>Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</h5><ul>
 <li>a、默认优先按照<strong>【类型】</strong>去容器中找对应的组件：application.getBean(CarDao.class);</li>
 <li>b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”)</li>
 <li>c、@Qualifier(“carDao”),使用Qualifier指定需要装配的组件的id，而不是使用属性名</li>
@@ -350,30 +350,30 @@
 <li>e、@Primary:让spring进行自动装配的时候，默认使用首选的bean；<br>还可以继续使用@Qualifier进行明确指定（优先级最高）。<a id="more"></a>
 </li>
 </ul>
-<h5 id="1-2-AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><a href="#1-2-AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值" class="headerlink" title="1.2 @AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"></a>1.2 @AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</h5><ul>
+<h5 id="AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><a href="#AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值" class="headerlink" title="@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"></a>@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</h5><ul>
 <li>a、标注在【构造器】上：如果组件只有一个有参构造器，这个有参构造器的@AutoWired可以省略</li>
 </ul>
 <p>代码如下：<br><strong>CarDao.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarDao</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String label = <span class="string">"11111"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLabel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> label;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLabel</span><span class="params">(String label)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.label = label;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"CarDao&#123;"</span> +</span><br><span class="line">                <span class="string">"label='"</span> + label + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>CarService.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"carDao2"</span>)</span><br><span class="line"><span class="comment">//    @Autowired(required = false)//</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CarDao carDao;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"CarService&#123;"</span> +</span><br><span class="line">                <span class="string">"carDao="</span> + carDao +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>测试类MainConfig.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">//@ComponentScan(&#123;"com.zero.controller","com.zero.service","com.zero.dao"&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line"><span class="comment">//    @Primary</span></span><br><span class="line">    <span class="meta">@Bean</span>(<span class="string">"carDao2"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CarDao <span class="title">carDao</span><span class="params">()</span></span>&#123;</span><br><span class="line">        CarDao carDao = <span class="keyword">new</span> CarDao();</span><br><span class="line">        carDao.setLabel(<span class="string">"22"</span>);</span><br><span class="line">        <span class="keyword">return</span>  carDao;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><a href="#2-Spring还支持使用-Resource-JSR250-和-Inject-JSR330" class="headerlink" title="2. Spring还支持使用@Resource(JSR250)和@Inject(JSR330)"></a>2. Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</h4><h5 id="2-1-Resource"><a href="#2-1-Resource" class="headerlink" title="2.1 @Resource:"></a>2.1 @Resource:</h5><ul>
+<h4 id="Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><a href="#Spring还支持使用-Resource-JSR250-和-Inject-JSR330" class="headerlink" title="Spring还支持使用@Resource(JSR250)和@Inject(JSR330)"></a>Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</h4><h5 id="Resource"><a href="#Resource" class="headerlink" title="@Resource:"></a>@Resource:</h5><ul>
 <li><p>可以和@AutoWired一样实现自动装配功能：默认是按照组件<strong>【名称】</strong>进行装配的。</p>
 </li>
 <li><p>没有能支持@Primary功能没有支持@Autowired(required=false);</p>
 </li>
 </ul>
-<h5 id="2-2-Injecct"><a href="#2-2-Injecct" class="headerlink" title="2.2. @Injecct"></a>2.2. @Injecct</h5><ul>
+<h5 id="Injecct"><a href="#Injecct" class="headerlink" title="@Injecct"></a>@Injecct</h5><ul>
 <li>需要导入javax.inject的包，和autowired的功能一样，没有required=false的功能；</li>
 <li>@AutoWired：spring定义的；</li>
 <li>@Resource、@Inject都是java规范</li>
 <li>AutowiredAnnotationBeanPostProcessor：解析完成自动装配功能；</li>
 </ul>
-<h4 id="3-自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><a href="#3-自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）" class="headerlink" title="3. 自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"></a>3. 自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</h4><p>自定义组件实现xxxAware:在创建对象的时候，会调用接口规定的方法注入相关组件：</p>
+<h4 id="自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><a href="#自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）" class="headerlink" title="自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"></a>自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</h4><p>自定义组件实现xxxAware:在创建对象的时候，会调用接口规定的方法注入相关组件：</p>
 <ul>
 <li>Aware：把spring底层的一些组件注入到自定义的Bean中</li>
 <li>ApplicationContextAware ===&gt; ApplicationContextAwareProcessor;</li>
 </ul>
-<h4 id="4-Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><a href="#4-Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。" class="headerlink" title="4. @Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"></a>4. @Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</h4><ul>
+<h4 id="Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><a href="#Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。" class="headerlink" title="@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"></a>@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</h4><ul>
 <li>a、加了环境标识bean，只有这个环境被激活的时候才能注册到容器中，默认是default环境</li>
 </ul>
 <ul>
@@ -506,7 +506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -528,7 +528,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -561,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-AutoWired，自动注入："><span class="nav-number">1.</span> <span class="nav-text">1. @AutoWired，自动注入：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 @AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><span class="nav-number">2.</span> <span class="nav-text">2. Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-Resource"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 @Resource:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-Injecct"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. @Injecct</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><span class="nav-number">3.</span> <span class="nav-text">3. 自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><span class="nav-number">4.</span> <span class="nav-text">4. @Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoWired，自动注入："><span class="nav-number">1.</span> <span class="nav-text">@AutoWired，自动注入：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><span class="nav-number">1.1.</span> <span class="nav-text">Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><span class="nav-number">1.2.</span> <span class="nav-text">@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><span class="nav-number">2.</span> <span class="nav-text">Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Resource"><span class="nav-number">2.1.</span> <span class="nav-text">@Resource:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Injecct"><span class="nav-number">2.2.</span> <span class="nav-text">@Injecct</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><span class="nav-number">3.</span> <span class="nav-text">自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><span class="nav-number">4.</span> <span class="nav-text">@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</span></a></li></ol></div>
             
 
           </div>
