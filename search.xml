@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Netty基础知识]]></title>
+    <url>%2F2018%2F11%2F12%2FNetty%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[阻塞与非阻塞线程访问资源，该资源是否准备就绪的一种处理方式。 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程 线程A ——–&gt; 处理中线程B ——–&gt; 处理中 同步与异步同步和异步是指访问数据的一种机制。同步就是在发出一个请求时，在没有得到结果之前，该请求就不返回。但是一旦调用返回，就得到返回值了。异步则是相反，请求在发出之后，这个请求就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，客户端不会立刻得到结果。而是在请求发出后，服务器通过状态、通知来通知请求者（客户端），或通过回调函数处理这个请求。 BIO同步阻塞的IO,Block IO 最广泛的模型是阻塞I/O模型，默认情况下，所有套接口都是阻塞的。 进程调用recvfrom系统调用，整个过程是阻塞的，直到数据复制到进程缓冲区时才返回（当然，系统调用被中断也会返回）。 NIO同步非阻塞IO, New IO (Non-Block IO) 当我们把一个套接口设置为非阻塞时，就是在告诉内核，当请求的I/O操作无法完成时，不要将进程睡眠，而是返回一个错误。当数据没有准备好时，内核立即返回EWOULDBLOCK错误，第四次调用系统调用时，数据已经存在，这时将数据复制到进程缓冲区中。这其中有一个操作时轮询（polling）。 AIO异步非阻塞IO 进程发起read操作之后，立刻就可以开始去做其它的事。而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。 这个模型工作机制是：告诉内核启动某个操作，并让内核在整个操作(包括第二阶段，即将数据从内核拷贝到进程缓冲区中)完成后通知我们。 Reactor线程模型主从线程模型：一组线程池接受请求，一组线程池处理io 可参考这篇文章 通俗地讲： BIO:去上厕所，坑全满，此时你一直光等着，主动观察哪个坑位好了，只要有坑位释放了，你就立马去占坑。 NIO: 厕所坑全满，此时你跑过去抽烟或者做别的事，然后时不时再主动的去厕所看有没有坑释放，如果有坑了自己去占。 AIO:你在厕所外抽烟玩手机，等有人好了之后来通知你去占坑。 常见面试 BIO,NIO,AIO的区别是什么？可参考这篇文章 参考链接 https://blog.csdn.net/u013068377/article/details/70312551 https://blog.csdn.net/king866/article/details/54427447]]></content>
+      <categories>
+        <category>Netty</category>
+      </categories>
+      <tags>
+        <tag>Netty</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[asyncSupported]]></title>
     <url>%2F2018%2F11%2F07%2FasyncSupported%2F</url>
     <content type="text"><![CDATA[简介@WebServlet@WebServlet 用于将一个类声明为 Servlet，该注解将会在部署时被容器处理，容器将根据具体的属性配置将相应的类部署为 Servlet。该注解具有下表给出的一些常用属性（以下所有属性均为可选属性，但是 vlaue 或者 urlPatterns 通常是必需的，且二者不能共存，如果同时指定，通常是忽略 value 的取值） 属性名 类型 描述 name String 指定 Servlet 的 name 属性，等价于 。如果没有显式指定，则该 Servlet 的取值即为类的全限定名。 value String[] 该属性等价于 urlPatterns 属性。两个属性不能同时使用。 urlPatterns String[] 指定一组 Servlet 的 URL 匹配模式。等价于 标签。 loadOnStartup int 指定 Servlet 的加载顺序，等价于 标签。 initParams WebInitParam[] 指定一组 Servlet 初始化参数，等价于 标签。 asyncSupported boolean 声明 Servlet 是否支持异步操作模式，等价于 标签。 description String 该 Servlet 的描述信息，等价于 标签。 displayName String 该 Servlet 的显示名，通常配合工具使用，等价于 标签。 实例123456789101112131415161718192021222324252627282930313233343536@WebServlet(value="/async",asyncSupported=true)public class HelloAsyncServlet extends HttpServlet &#123; @Override protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123; //1、支持异步处理asyncSupported=true //2、开启异步模式 System.out.println("主线程开始。。。"+Thread.currentThread()+"==&gt;"+System.currentTimeMillis()); AsyncContext startAsync = req.startAsync(); //3、业务逻辑进行异步处理;开始异步处理 startAsync.start(new Runnable() &#123; @Override public void run() &#123; try &#123; System.out.println("副线程开始。。。"+Thread.currentThread()+"==&gt;"+System.currentTimeMillis()); sayHello(); startAsync.complete(); //获取到异步上下文 AsyncContext asyncContext = req.getAsyncContext(); //4、获取响应 ServletResponse response = asyncContext.getResponse(); response.getWriter().write("hello async..."); System.out.println("副线程结束。。。"+Thread.currentThread()+"==&gt;"+System.currentTimeMillis()); &#125; catch (Exception e) &#123; &#125; &#125; &#125;); System.out.println("主线程结束。。。"+Thread.currentThread()+"==&gt;"+System.currentTimeMillis()); &#125; public void sayHello() throws Exception&#123; System.out.println(Thread.currentThread()+" processing..."); Thread.sleep(3000); &#125;&#125;]]></content>
@@ -43,8 +54,8 @@
         <category>Spring源码</category>
       </categories>
       <tags>
-        <tag>Spring</tag>
         <tag>Spring源码</tag>
+        <tag>Spring</tag>
       </tags>
   </entry>
   <entry>

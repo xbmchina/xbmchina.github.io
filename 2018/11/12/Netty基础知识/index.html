@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Blog," />
+  <meta name="keywords" content="Netty," />
 
 
 
@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli">
-<meta name="keywords" content="Blog">
+<meta name="description" content="阻塞与非阻塞线程访问资源，该资源是否准备就绪的一种处理方式。 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程 线程A ——–&amp;gt; 处理中线程B ——–&amp;gt; 处理中 同步与异步同步和异步是指访问数据的一种机制。同步就是在发出一个请求时，在没有得到结果之前，该请求就不返回。但是一旦调用返回，就得到返">
+<meta name="keywords" content="Netty">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2018/09/26/Hexo-blog/index.html">
+<meta property="og:title" content="Netty基础知识">
+<meta property="og:url" content="http://yoursite.com/2018/11/12/Netty基础知识/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli">
+<meta property="og:description" content="阻塞与非阻塞线程访问资源，该资源是否准备就绪的一种处理方式。 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程 线程A ——–&amp;gt; 处理中线程B ——–&amp;gt; 处理中 同步与异步同步和异步是指访问数据的一种机制。同步就是在发出一个请求时，在没有得到结果之前，该请求就不返回。但是一旦调用返回，就得到返">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://img-blog.csdn.net/20161115143629057">
-<meta property="og:updated_time" content="2018-09-29T14:13:51.526Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-3151acdfb9dc1055.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-12T15:12:20.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub搭建个人博客">
-<meta name="twitter:description" content="一、安装Hexo  安装node.js 、git  安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20161115143629057">
+<meta name="twitter:title" content="Netty基础知识">
+<meta name="twitter:description" content="阻塞与非阻塞线程访问资源，该资源是否准备就绪的一种处理方式。 阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程 线程A ——–&amp;gt; 处理中线程B ——–&amp;gt; 处理中 同步与异步同步和异步是指访问数据的一种机制。同步就是在发出一个请求时，在没有得到结果之前，该请求就不返回。但是一旦调用返回，就得到返">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-3151acdfb9dc1055.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/26/Hexo-blog/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/12/Netty基础知识/"/>
 
 
 
 
 
-  <title>Hexo+GitHub搭建个人博客 | ZERO</title>
+  <title>Netty基础知识 | ZERO</title>
   
 
 
@@ -255,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/26/Hexo-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/12/Netty基础知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero">
@@ -272,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo+GitHub搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">Netty基础知识</h1>
         
 
         <div class="post-meta">
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-26T21:19:05+08:00">
-                2018-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-12T23:11:00+08:00">
+                2018-11-12
               </time>
             
 
@@ -307,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/Netty/" itemprop="url" rel="index">
+                    <span itemprop="name">Netty</span>
                   </a>
                 </span>
 
@@ -344,63 +344,35 @@
       
 
       
-        <h3 id="一、安装Hexo"><a href="#一、安装Hexo" class="headerlink" title="一、安装Hexo"></a>一、安装Hexo</h3><blockquote>
+        <h4 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h4><p>线程访问资源，该资源是否准备就绪的一种处理方式。</p>
+<p><strong>阻塞</strong>调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。<br><strong>非阻塞</strong>调用指在不能立刻得到结果之前，该调用不会阻塞当前线程</p>
+<p>线程A ——–&gt; 处理中<br>线程B ——–&gt; 处理中</p>
+<h4 id="同步与异步"><a href="#同步与异步" class="headerlink" title="同步与异步"></a>同步与异步</h4><p>同步和异步是指访问数据的一种机制。<br><strong>同步</strong>就是在发出一个请求时，在没有得到结果之前，该请求就不返回。但是一旦调用返回，就得到返回值了。<br><strong>异步</strong>则是相反，请求在发出之后，这个请求就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，客户端不会立刻得到结果。而是在请求发出后，服务器通过状态、通知来通知请求者（客户端），或通过回调函数处理这个请求。<br><a id="more"></a></p>
+<h4 id="BIO"><a href="#BIO" class="headerlink" title="BIO"></a>BIO</h4><p>同步阻塞的IO,Block IO</p>
+<p>最广泛的模型是阻塞I/O模型，默认情况下，所有套接口都是阻塞的。 进程调用recvfrom系统调用，整个过程是阻塞的，直到数据复制到进程缓冲区时才返回（当然，系统调用被中断也会返回）。</p>
+<h4 id="NIO"><a href="#NIO" class="headerlink" title="NIO"></a>NIO</h4><p>同步非阻塞IO, New IO (Non-Block IO)</p>
+<p>当我们把一个套接口设置为非阻塞时，就是在告诉内核，当请求的I/O操作无法完成时，不要将进程睡眠，而是返回一个错误。当数据没有准备好时，内核立即返回EWOULDBLOCK错误，第四次调用系统调用时，数据已经存在，这时将数据复制到进程缓冲区中。这其中有一个操作时轮询（polling）。</p>
+<h4 id="AIO"><a href="#AIO" class="headerlink" title="AIO"></a>AIO</h4><p>异步非阻塞IO</p>
+<p>　　进程发起read操作之后，立刻就可以开始去做其它的事。而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。</p>
+<p>　　这个模型工作机制是：告诉内核启动某个操作，并让内核在整个操作(包括第二阶段，即将数据从内核拷贝到进程缓冲区中)完成后通知我们。</p>
+<h4 id="Reactor线程模型"><a href="#Reactor线程模型" class="headerlink" title="Reactor线程模型"></a>Reactor线程模型</h4><p>主从线程模型：一组线程池接受请求，一组线程池处理io</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-3151acdfb9dc1055.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>可参考这篇<strong><a href="https://blog.csdn.net/king866/article/details/54427447" target="_blank" rel="noopener">文章</a></strong></p>
+<p><strong>通俗地讲：</strong></p>
 <ul>
-<li>安装<a href="http://nodejs.cn/" target="_blank" rel="noopener">node.js</a> 、<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a> </li>
-<li>安装Hexo,打开控制台cmd,输入命令： npm install -g hexo-cli<a id="more"></a>
-</li>
+<li>BIO:去上厕所，坑全满，此时你一直光等着，<strong>主动</strong>观察哪个坑位好了，只要有坑位释放了，你就立马去占坑。</li>
+<li>NIO: 厕所坑全满，此时你跑过去抽烟或者做别的事，然后时不时再<strong>主动</strong>的去厕所看有没有坑释放，如果有坑了自己去占。</li>
+<li>AIO:你在厕所外抽烟玩手机，等有人好了之后来通知你去占坑。</li>
 </ul>
-</blockquote>
-<h3 id="二、初始化"><a href="#二、初始化" class="headerlink" title="二、初始化"></a>二、初始化</h3><ol>
-<li><p>找个空文件夹，打开终端，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo i blog   //初始化</span><br><span class="line">cd blog       //切换到项目根目录</span><br><span class="line">hexo g        //生成页面</span><br><span class="line">hexo s        //运行server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开浏览器输入localhost:4000查看到以下页面<br><img src="https://img-blog.csdn.net/20161115143629057" alt="hexo"></p>
-</li>
-</ol>
-<h3 id="三、修改主题-nexT"><a href="#三、修改主题-nexT" class="headerlink" title="三、修改主题-nexT"></a>三、修改主题-nexT</h3><ol>
-<li><p>blog的根目录下运行命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改配置_config.yml文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改主题<br>   在 站点根目录/themes/next/_congig.yml 文件中修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line"># scheme: Gemini</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行命令</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  //清缓存</span><br><span class="line">hexo g      //重新编译生成代码</span><br><span class="line">hexo s      //部署到本地</span><br><span class="line"></span><br><span class="line">//然后打开浏览器访问 localhost:4000 查看效果</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="四、上传到GitHub"><a href="#四、上传到GitHub" class="headerlink" title="四、上传到GitHub"></a>四、上传到GitHub</h3><ol>
-<li><p>你的GitHub中新建一个repository，<strong>项目名称格式：</strong> 为：你的账号名.github.io</p>
-</li>
-<li><p>修改hexo站点的配置文件_config.yml，找到最后，加入第一步的那个项目地址。格式最好复制过去改，因为这里很狗血的。</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repository: https://github.com/你的账号/你的账号.github.io.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署到GitHub中</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save  //安装插件</span><br><span class="line">hexo d  //  部署的命令</span><br></pre></td></tr></table></figure>
-<h3 id="五、配置域名"><a href="#五、配置域名" class="headerlink" title="五、配置域名"></a>五、配置域名</h3><ol>
-<li><p>如果你有的话也可以配置，腾讯云的比较便宜，不过域名要备案的</p>
+<h4 id="常见面试"><a href="#常见面试" class="headerlink" title="常见面试"></a>常见面试</h4><ul>
+<li>BIO,NIO,AIO的区别是什么？<br>可参考这篇<a href="https://blog.csdn.net/u013068377/article/details/70312551" target="_blank" rel="noopener">文章</a></li>
+</ul>
+<p><strong>参考链接</strong></p>
 <ul>
-<li>根目录/source 目录下创建一个<strong>新文件</strong>CNAME</li>
-<li>将域名添加进去</li>
-<li>运行命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  //清缓存</span><br><span class="line">hexo g      //重新编译生成代码</span><br><span class="line">hexo d      //部署到github</span><br></pre></td></tr></table></figure>
-</li>
+<li><a href="https://blog.csdn.net/u013068377/article/details/70312551" target="_blank" rel="noopener">https://blog.csdn.net/u013068377/article/details/70312551</a></li>
+<li><a href="https://blog.csdn.net/king866/article/details/54427447" target="_blank" rel="noopener">https://blog.csdn.net/king866/article/details/54427447</a></li>
 </ul>
-</li>
-</ol>
-<h3 id="六、发布自己文章"><a href="#六、发布自己文章" class="headerlink" title="六、发布自己文章"></a>六、发布自己文章</h3><ol>
-<li>在blog根目录\source_posts中有.md的文件模板</li>
-<li>然后你可以写好.md文件之后，运行hexo clean、hexo g、hexo d  进行发布。</li>
-<li>所以修改模板的名字这些操作可以全局搜索，相应的关键词进行替换就可以修改成你自己的名字了。_config.yml文件中可以修改作者和blog的名称之类的配置。</li>
-</ol>
-<h3 id="七、后记"><a href="#七、后记" class="headerlink" title="七、后记"></a>七、后记</h3><pre><code>感谢这位大哥的指引
-https://blog.csdn.net/Hoshea_chx/article/details/78826689
-</code></pre>
+
       
     </div>
     
@@ -417,7 +389,7 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
       
         <div class="post-tags">
           
-            <a href="/tags/Blog/" rel="tag"># Blog</a>
+            <a href="/tags/Netty/" rel="tag"># Netty</a>
           
         </div>
       
@@ -430,15 +402,15 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/07/asyncSupported/" rel="next" title="asyncSupported">
+                <i class="fa fa-chevron-left"></i> asyncSupported
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/27/大数据概述/" rel="prev" title="大数据概述">
-                大数据概述 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,7 +546,7 @@ https://blog.csdn.net/Hoshea_chx/article/details/78826689
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、安装Hexo"><span class="nav-number">1.</span> <span class="nav-text">一、安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、初始化"><span class="nav-number">2.</span> <span class="nav-text">二、初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、修改主题-nexT"><span class="nav-number">3.</span> <span class="nav-text">三、修改主题-nexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、上传到GitHub"><span class="nav-number">4.</span> <span class="nav-text">四、上传到GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、配置域名"><span class="nav-number">5.</span> <span class="nav-text">五、配置域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、发布自己文章"><span class="nav-number">6.</span> <span class="nav-text">六、发布自己文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、后记"><span class="nav-number">7.</span> <span class="nav-text">七、后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#阻塞与非阻塞"><span class="nav-number">1.</span> <span class="nav-text">阻塞与非阻塞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步与异步"><span class="nav-number">2.</span> <span class="nav-text">同步与异步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BIO"><span class="nav-number">3.</span> <span class="nav-text">BIO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NIO"><span class="nav-number">4.</span> <span class="nav-text">NIO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AIO"><span class="nav-number">5.</span> <span class="nav-text">AIO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reactor线程模型"><span class="nav-number">6.</span> <span class="nav-text">Reactor线程模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见面试"><span class="nav-number">7.</span> <span class="nav-text">常见面试</span></a></li></ol></div>
             
 
           </div>
