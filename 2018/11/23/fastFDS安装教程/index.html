@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-69da6bb62469a598.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-70681e2ea3da0cc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-316199ba69c78583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-24T04:58:18.415Z">
+<meta property="og:updated_time" content="2018-11-24T05:47:28.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FastFDS安装教程">
 <meta name="twitter:description" content="简介FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &amp;lt; file_size &amp;lt;500MB)为载体的在线服务。 本文基于阿里云centos7.2 准备工作 1.余大的GitHub: https://">
@@ -370,7 +370,7 @@
 <li>4、安装fastfds<br>进入fastfds的目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./make.sh </span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>安装完成，修改配置文件，到/etc/fdfs中运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p client.conf.sample client.conf </span><br><span class="line">cp storage.conf.sample storage.conf </span><br><span class="line">cp tracker.conf.sample tracker.conf</span><br></pre></td></tr></table></figure></p>
+<p>安装完成，修改配置文件，到/etc/fdfs中运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp client.conf.sample client.conf </span><br><span class="line">cp storage.conf.sample storage.conf </span><br><span class="line">cp tracker.conf.sample tracker.conf</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>5、配置Tracker<br>创建Tracker服务器的文件路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/fastdfs_tracker</span><br></pre></td></tr></table></figure>
 </li>
