@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-cn">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="FastFDS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简介FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &amp;lt; file_size &amp;lt;500MB)为载体的在线服务。 本文基于阿里云centos7.2 准备工作 1.余大的GitHub: https://">
+<meta name="keywords" content="FastFDS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FastFDS安装教程">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/fastFDS安装教程/index.html">
+<meta property="og:site_name" content="ZERO">
+<meta property="og:description" content="简介FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &amp;lt; file_size &amp;lt;500MB)为载体的在线服务。 本文基于阿里云centos7.2 准备工作 1.余大的GitHub: https://">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-fb8e12a4cb775cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-69da6bb62469a598.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-70681e2ea3da0cc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-316199ba69c78583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-24T04:58:18.415Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FastFDS安装教程">
+<meta name="twitter:description" content="简介FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &amp;lt; file_size &amp;lt;500MB)为载体的在线服务。 本文基于阿里云centos7.2 准备工作 1.余大的GitHub: https://">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-fb8e12a4cb775cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/fastFDS安装教程/"/>
+
+
+
+
+
+  <title>FastFDS安装教程 | ZERO</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZERO</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">挑战人生无极限，攀登人生更高峰</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/fastFDS安装教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZERO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">FastFDS安装教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T21:46:00+08:00">
+                2018-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件安装/" itemprop="url" rel="index">
+                    <span itemprop="name">软件安装</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &lt; file_size &lt;500MB)为载体的在线服务。</p>
+<p><strong>本文基于阿里云centos7.2</strong></p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>1.余大的GitHub: <a href="https://github.com/happyfish100" target="_blank" rel="noopener">https://github.com/happyfish100</a> 中的<a href="https://github.com/happyfish100/fastdfs" target="_blank" rel="noopener">fastdfs</a>、<a href="https://github.com/happyfish100/libfastcommon" target="_blank" rel="noopener">libfastcommon</a>、<br><a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="noopener">fastdfs-nginx-module</a>  这三个需要下载。</li>
+<li>2.下载Nginx。链接地址 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></li>
+</ul>
+<a id="more"></a>
+<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><h5 id="FastFDS安装"><a href="#FastFDS安装" class="headerlink" title="FastFDS安装"></a>FastFDS安装</h5><ul>
+<li><p>1、安装工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum -y install unzip zip</span><br><span class="line">yum -y install gcc-c++</span><br><span class="line">yum -y install pcre pcre-devel </span><br><span class="line">yum -y install zlib zlib-devel </span><br><span class="line">yum -y install openssl openssl-devel</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2、上传fastfds、libfastcommon、fastdfs-nginx-module到/usr/local/  目录下并解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unzip libfastcommon-master.zip</span><br><span class="line">unzip fastdfs-nginx-module-master.zip</span><br><span class="line">tar -zxvf fastdfs-5.11.tar.gz</span><br><span class="line">tar -zxvf nginx-1.14.1.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3、安装libfastcommon<br>进入libfastcommon目录，运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./make</span><br><span class="line">./make install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此libfastcommon就已经安装成功了,但注意一下上图中红色框标注的内容,libfastcommon.so 默认安装到了/usr/lib64/libfastcommon.so,但是FastDFS主程序设置的lib目录是/usr/local/lib,所以此处需要重新设置软链接(类似于Windows的快捷方式):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/lib64/libfastcommon.so /usr/local/lib/libfastcommon.so </span><br><span class="line">ln -s /usr/lib64/libfastcommon.so /usr/lib/libfastcommon.so </span><br><span class="line">ln -s /usr/lib64/libfdfsclient.so /usr/local/lib/libfdfsclient.so </span><br><span class="line">ln -s /usr/lib64/libfdfsclient.so /usr/lib/libfdfsclient.so</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>4、安装fastfds<br>进入fastfds的目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./make.sh </span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>安装完成，修改配置文件，到/etc/fdfs中运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p client.conf.sample client.conf </span><br><span class="line">cp storage.conf.sample storage.conf </span><br><span class="line">cp tracker.conf.sample tracker.conf</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>5、配置Tracker<br>创建Tracker服务器的文件路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/fastdfs_tracker</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>编辑上一步准备好的/etc/fdfs目录下的<strong>tracker.conf</strong>配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">disabled=false#启用配置文件(默认启用) </span><br><span class="line">port=22122#设置tracker的端口号,通常采用22122这个默认端口 </span><br><span class="line">base_path=/opt/fastdfs_tracker#设置tracker的数据文件和日志目录 </span><br><span class="line">http.server_port=6666#设置http端口号,默认为8080</span><br></pre></td></tr></table></figure></p>
+<p>接着为启动脚本创建软引用,因为fdfs_trackerd等命令在/usr/local/bin中并没有。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin </span><br><span class="line">ln -s /usr/bin/stop.sh /usr/local/bin </span><br><span class="line">ln -s /usr/bin/restart.sh /usr/local/bin</span><br></pre></td></tr></table></figure></p>
+<p>最后启动Tracker服务器:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_trackerd start</span><br></pre></td></tr></table></figure></p>
+<p>查看启动状况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br></pre></td></tr></table></figure></p>
+<p>如下图表示成功了<br><img src="https://upload-images.jianshu.io/upload_images/13150128-fb8e12a4cb775cff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Tracker.png"></p>
+<ul>
+<li>6、配置Storage<br>创建Storage服务器的文件目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/fastdfs_storage </span><br><span class="line">mkdir /opt/fastdfs_storage_data</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接下来修改/etc/fdfs目录下的storage.conf配置文件,打开文件后依次做以下修改:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">disabled=false#启用配置文件(默认启用) </span><br><span class="line">group_name=group1#组名,根据实际情况修改 </span><br><span class="line">port=23000 #设置storage的端口号,默认是23000,同一个组的storage端口号必须一致 </span><br><span class="line">base_path=/opt/fastdfs_storage#设置storage数据文件和日志目录 </span><br><span class="line">store_path_count=1 #存储路径个数,需要和store_path个数匹配 </span><br><span class="line">store_path0=/opt/fastdfs_storage_data #实际文件存储路径 </span><br><span class="line">tracker_server=192.168.112.16:22122 #tracker 服务器的 IP地址和端口号,如果是单机搭建,IP不要写127.0.0.1,否则启动不成功(此处的ip是我的CentOS虚拟机ip) </span><br><span class="line">http.server_port=8888#设置 http 端口号</span><br></pre></td></tr></table></figure></p>
+<p>配置完成后同样要为Storage服务器的启动脚本设置软引用:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</span><br></pre></td></tr></table></figure></p>
+<p>启动Storage服务了:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_storaged start</span><br></pre></td></tr></table></figure></p>
+<p>验证是否成功：<br>可以到/opt/fastdfs_storage/data目录下生成好的pid文件和dat文件,那么再看一下实际文件存储路径下是否有创建好的多级目录呢: 如下图就是成功了。<br><img src="https://upload-images.jianshu.io/upload_images/13150128-69da6bb62469a598.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Storage.png"></p>
+<p>查看端口是否正常。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>7、测试上传<br>测试时需要设置客户端的配置文件,编辑/etc/fdfs目录下的client.conf 文件,打开文件后依次做以下修改:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">base_path=/opt/fastdfs_tracker#tracker服务器文件路径 </span><br><span class="line">tracker_server=192.168.111.11:22122#tracker服务器IP地址和端口号 </span><br><span class="line">http.tracker_server_port=6666# tracker 服务器的 http 端口号,必须和tracker的设置对应起来</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上传一张照片上去：<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /opt/54ffac56000169c001840181.jpg</span><br></pre></td></tr></table></figure></p>
+<p>成功如下图<br><img src="https://upload-images.jianshu.io/upload_images/13150128-70681e2ea3da0cc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="上传成功"></p>
+<h5 id="FastDFS与nginx进行集成"><a href="#FastDFS与nginx进行集成" class="headerlink" title="FastDFS与nginx进行集成"></a>FastDFS与nginx进行集成</h5><ul>
+<li>1、加入模块<br>加入模块命令：(对准你的fastdfs-nginx-module安装包）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --add-module=/usr/local/fast/fastdfs-nginx-module/src/</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>复制fastdfs-ngin-module中的配置文件，到/etc/fdfs目录中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/local/fast/fastdfs-nginx-module/src/mod_fastdfs.conf  /etc/fdfs/</span><br></pre></td></tr></table></figure></p>
+<p>修改mod_fastdfs.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#修改内容：比如连接超时时间、跟踪器路径配置、url的group配置、</span><br><span class="line">connect_timeout=10</span><br><span class="line">tracker_server=192.168.1.172:22122</span><br><span class="line">url_have_group_name = true</span><br><span class="line">store_path0=/opt/fastdfs_storage_data #这个要跟storage的相同。</span><br></pre></td></tr></table></figure></p>
+<p>复制FastDFS里的2个文件，到/etc/fdfs目录中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/fast/FastDFS/conf/</span><br><span class="line">cp http.conf mime.types /etc/fdfs/</span><br></pre></td></tr></table></figure></p>
+<p>创建一个软连接，在/fastdfs/storage文件存储目录下创建软连接，将其链接到实际存放数据的目录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /fastdfs/storage/data/ /fastdfs/storage/data/M00</span><br></pre></td></tr></table></figure></p>
+<p>修改配置nginx.conf</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-316199ba69c78583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx配置.png"></p>
+<p>修改内容为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">listen 8888;</span><br><span class="line"></span><br><span class="line">server_name localhost;</span><br><span class="line">location ~/group([0-9])/M00 &#123;</span><br><span class="line">root /fastdfs/storage/data;</span><br><span class="line">ngx_fastdfs_module;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>启动Nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure></p>
+<p>现在我们使用这个ID用浏览器访问地址：<br><a href="http://120.79.226.4:8888/group1/M00/00/00/rBJeZVv4AbqAJlGpAACoAPN3PCk295.jpg" target="_blank" rel="noopener">http://120.79.226.4:8888/group1/M00/00/00/rBJeZVv4AbqAJlGpAACoAPN3PCk295.jpg</a></p>
+<p><strong>特别提醒：阿里云的端口需要到安全组配置里配置才能访问的。</strong></p>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><ul>
+<li>1、<a href="https://www.cnblogs.com/tc520/p/6822412.html" target="_blank" rel="noopener">https://www.cnblogs.com/tc520/p/6822412.html</a></li>
+<li>2、<a href="https://www.aliyun.com/jiaocheng/28474.html?spm=5176.100033.2.7.279346ddqJL0aa" target="_blank" rel="noopener">https://www.aliyun.com/jiaocheng/28474.html?spm=5176.100033.2.7.279346ddqJL0aa</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FastFDS/" rel="tag"># FastFDS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/13/Nettty入门实例/" rel="next" title="Nettty入门实例">
+                <i class="fa fa-chevron-left"></i> Nettty入门实例
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="zero" />
+            
+              <p class="site-author-name" itemprop="name">zero</p>
+              <p class="site-description motion-element" itemprop="description">Everthing will going to be all right.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始安装"><span class="nav-number">3.</span> <span class="nav-text">开始安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FastFDS安装"><span class="nav-number">3.1.</span> <span class="nav-text">FastFDS安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FastDFS与nginx进行集成"><span class="nav-number">3.2.</span> <span class="nav-text">FastDFS与nginx进行集成</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">3.3.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zero</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
