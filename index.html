@@ -286,6 +286,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/21/Springboot集成ueditor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zero">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZERO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/21/Springboot集成ueditor/" itemprop="url">Springboot集成ueditor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-21T22:40:00+08:00">
+                2018-12-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">Springboot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="ueditor"><a href="#ueditor" class="headerlink" title="ueditor"></a>ueditor</h4><p>ueditor是百度开源的富文本编辑器。使用教程可以参考官网。<br><a href="https://ueditor.baidu.com/website/download.html" target="_blank" rel="noopener">ueditor JPS版下载地址</a></p>
+<h4 id="Springboot创建项目"><a href="#Springboot创建项目" class="headerlink" title="Springboot创建项目"></a>Springboot创建项目</h4><p>将ueditor下载的放到static目录下，里面有个index.html的demo，可参考。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-fd600d8e36a37858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ueditor.png"></p>
+<p>templates目录下的<strong>index.html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"</span></span><br><span class="line"><span class="meta">        "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>完整demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=utf-8"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> <span class="attr">src</span>=<span class="string">"/ueditor/ueditor.config.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> <span class="attr">src</span>=<span class="string">"/ueditor/ueditor.all.min.js"</span>&gt;</span><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> <span class="attr">src</span>=<span class="string">"/ueditor/lang/zh-cn/zh-cn.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div&#123;</span></span><br><span class="line"><span class="undefined">            width:100%;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/ueditor/uploadContent.action"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/plain"</span> <span class="attr">id</span>=<span class="string">"uploadEditor"</span> <span class="attr">name</span>=<span class="string">"myContent"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    //实例化编辑器</span></span><br><span class="line"><span class="undefined">    var ue = UE.getEditor('uploadEditor',&#123;</span></span><br><span class="line"><span class="undefined">        enableAutoSave:false,</span></span><br><span class="line"><span class="undefined">        autoHeightEnabled: true,</span></span><br><span class="line"><span class="undefined">        autoFloatEnabled: true,</span></span><br><span class="line"><span class="undefined">        scaleEnabled:true,//滚动条</span></span><br><span class="line"><span class="undefined">        initialFrameHeight:400 //默认的编辑区域高度</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;</span></span><br><span class="line"><span class="undefined">    UE.Editor.prototype.getActionUrl = function(action) &#123;</span></span><br><span class="line"><span class="undefined">        if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadimage') &#123;</span></span><br><span class="line"><span class="undefined">            return 'http://localhost:8080/ueditor/imgUpdate'; //在这里返回我们实际的上传图片地址</span></span><br><span class="line"><span class="undefined">        &#125; else &#123;</span></span><br><span class="line"><span class="undefined">            return this._bkGetActionUrl.call(this, action);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>js目录下的<strong>config.json</strong> 修改图片的访问地址</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-c35aaef5c5b6810f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="config.json配置.png"></p>
+<p>ueditor目录下的<strong>ueditor.config.js</strong> 配置读取上传图片的配置。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-ba3cffa537fc108a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="读取配置的地址.png"></p>
+<p>Springboot写上传接口，Controller代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/ueditor"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/file"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">file</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        String s = <span class="string">"&#123;\n"</span> +</span><br><span class="line">                <span class="string">"            \"imageActionName\": \"uploadimage\",\n"</span> +</span><br><span class="line">                <span class="string">"                \"imageFieldName\": \"file\", \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageMaxSize\": 2048000, \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageAllowFiles\": [\".png\", \".jpg\", \".jpeg\", \".gif\", \".bmp\"], \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageCompressEnable\": true, \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageCompressBorder\": 1600, \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageInsertAlign\": \"none\", \n"</span> +</span><br><span class="line">                <span class="string">"                \"imageUrlPrefix\": \"\",\n"</span> +</span><br><span class="line">                <span class="string">"                \"imagePathFormat\": \"/ueditor/jsp/upload/image/&#123;yyyy&#125;&#123;mm&#125;&#123;dd&#125;/&#123;time&#125;&#123;rand:6&#125;\" &#125;"</span>;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/imgUpdate"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">imgUpdate</span><span class="params">(MultipartFile file, HttpServletRequest request)</span> <span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (file.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 获取文件名</span></span><br><span class="line">        String fileName = file.getOriginalFilename();</span><br><span class="line">        <span class="comment">// 获取文件的后缀名</span></span><br><span class="line">        String suffixName = fileName.substring(fileName.lastIndexOf(<span class="string">"."</span>));</span><br><span class="line">        <span class="comment">// 这里我使用随机字符串来重新命名图片</span></span><br><span class="line">        fileName = Calendar.getInstance().getTimeInMillis() + suffixName;</span><br><span class="line"></span><br><span class="line">        String realPath = request.getSession().getServletContext().getRealPath(<span class="string">"images"</span>);</span><br><span class="line"></span><br><span class="line">        String path = <span class="string">"D:\\images\\"</span> + fileName;<span class="comment">//此处保存在本地了，你也可以保存在图片服务器，或者realPath做临时文件</span></span><br><span class="line">        File dest = <span class="keyword">new</span> File(path);</span><br><span class="line">        <span class="comment">// 检测是否存在目录</span></span><br><span class="line">        <span class="keyword">if</span> (!dest.getParentFile().exists()) &#123;</span><br><span class="line">            dest.getParentFile().mkdirs();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            file.transferTo(dest);</span><br><span class="line">            String config = <span class="string">"&#123;\"state\": \"SUCCESS\","</span> +</span><br><span class="line">                    <span class="string">"\"url\": \""</span> + <span class="string">"http://localhost:8080/ueditor/images/"</span> + fileName + <span class="string">"\","</span> +</span><br><span class="line">                    <span class="string">"\"title\": \""</span> + fileName + <span class="string">"\","</span> +</span><br><span class="line">                    <span class="string">"\"original\": \""</span> + fileName + <span class="string">"\"&#125;"</span>;</span><br><span class="line">            <span class="keyword">return</span> config;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalStateException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"error"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过url请求返回图像的字节流</span></span><br><span class="line"><span class="comment">     *      </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/images/&#123;fileName&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getIcon</span><span class="params">(@PathVariable(<span class="string">"fileName"</span>)</span> String fileName, HttpServletRequest request, HttpServletResponse response) <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isEmpty(fileName)) &#123;</span><br><span class="line">            fileName = <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String path = <span class="string">"D:\\images\\"</span> + fileName;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        File file = <span class="keyword">new</span> File(path);</span><br><span class="line">        <span class="comment">//判断文件是否存在如果不存在就返回默认图标</span></span><br><span class="line">        <span class="keyword">if</span> (!(file.exists() &amp;&amp; file.canRead())) &#123;</span><br><span class="line">            file = <span class="keyword">new</span> File(path);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        FileInputStream inputStream = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>) file.length()];</span><br><span class="line">        <span class="keyword">int</span> length = inputStream.read(data);</span><br><span class="line">        inputStream.close();</span><br><span class="line">        response.setContentType(<span class="string">"image/png"</span>);</span><br><span class="line">        OutputStream stream = response.getOutputStream();</span><br><span class="line">        stream.write(data);</span><br><span class="line">        stream.flush();</span><br><span class="line">        stream.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/uploadContent.action"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">uploadContent</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        String content = request.getParameter(<span class="string">"myContent"</span>);</span><br><span class="line">        System.out.println(content);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/08/Mysql问题集锦/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1593,157 +1745,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/fastFDS安装教程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zero">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZERO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/fastFDS安装教程/" itemprop="url">FastFDS安装教程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T21:46:00+08:00">
-                2018-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件安装/" itemprop="url" rel="index">
-                    <span itemprop="name">软件安装</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>FastDFS是一个开源的轻量级分布式文件系统,由跟踪服务器(tracker server)、存储服务器(storage server)和客户端(client)三个部分组成,主要解决了海量数据存储问题,特别适合以中小文件(建议范围:4KB &lt; file_size &lt;500MB)为载体的在线服务。</p>
-<p><strong>本文基于阿里云centos7.2</strong></p>
-<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
-<li>1.余大的GitHub: <a href="https://github.com/happyfish100" target="_blank" rel="noopener">https://github.com/happyfish100</a> 中的<a href="https://github.com/happyfish100/fastdfs" target="_blank" rel="noopener">fastdfs</a>、<a href="https://github.com/happyfish100/libfastcommon" target="_blank" rel="noopener">libfastcommon</a>、<br><a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="noopener">fastdfs-nginx-module</a>  这三个需要下载。</li>
-<li>2.下载Nginx。链接地址 <a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">http://nginx.org/en/download.html</a></li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/23/fastFDS安装教程/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1798,7 +1799,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1809,7 +1810,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1820,7 +1821,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
