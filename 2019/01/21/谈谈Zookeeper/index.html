@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Spring," />
+  <meta name="keywords" content="大数据,zookeeper," />
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
-<meta name="keywords" content="Spring">
+<meta name="description" content="简介ZooKeeper是一种高性能的分布式应用协调服务。它在一个简单的接口中公开公共服务，例如命名、配置管理、同步和组服务，这样你就不必从头编写它们。你可以使用它来实现共识、组管理、领导人选举和到场协议。您可以根据自己的特定需要在此基础上进行构建。">
+<meta name="keywords" content="大数据,zookeeper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring自动装配">
-<meta property="og:url" content="http://yoursite.com/2018/10/14/Spring自动装配/index.html">
+<meta property="og:title" content="谈谈Zookeeper">
+<meta property="og:url" content="http://yoursite.com/2019/01/21/谈谈Zookeeper/index.html">
 <meta property="og:site_name" content="ZERO">
-<meta property="og:description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
+<meta property="og:description" content="简介ZooKeeper是一种高性能的分布式应用协调服务。它在一个简单的接口中公开公共服务，例如命名、配置管理、同步和组服务，这样你就不必从头编写它们。你可以使用它来实现共识、组管理、领导人选举和到场协议。您可以根据自己的特定需要在此基础上进行构建。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-11-07T14:50:04.456Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-111c2725450ef042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-c5ffad0ff6ea5ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13150128-894f98cf6f8bf990.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-21T13:51:31.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring自动装配">
-<meta name="twitter:description" content="@AutoWired，自动注入：Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。 a、默认优先按照【类型】去容器中找对应的组件：application.getBean(CarDao.class); b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”) c、@Qualifier(“">
+<meta name="twitter:title" content="谈谈Zookeeper">
+<meta name="twitter:description" content="简介ZooKeeper是一种高性能的分布式应用协调服务。它在一个简单的接口中公开公共服务，例如命名、配置管理、同步和组服务，这样你就不必从头编写它们。你可以使用它来实现共识、组管理、领导人选举和到场协议。您可以根据自己的特定需要在此基础上进行构建。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13150128-111c2725450ef042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/14/Spring自动装配/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/21/谈谈Zookeeper/"/>
 
 
 
 
 
-  <title>Spring自动装配 | ZERO</title>
+  <title>谈谈Zookeeper | ZERO</title>
   
 
 
@@ -287,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/Spring自动装配/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/21/谈谈Zookeeper/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zero">
@@ -304,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring自动装配</h1>
+          <h1 class="post-title" itemprop="name headline">谈谈Zookeeper</h1>
         
 
         <div class="post-meta">
@@ -316,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-14T22:25:00+08:00">
-                2018-10-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-21T21:50:00+08:00">
+                2019-01-21
               </time>
             
 
@@ -339,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring源码/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring源码</span>
+                  <a href="/categories/大数据/" itemprop="url" rel="index">
+                    <span itemprop="name">大数据</span>
                   </a>
                 </span>
 
@@ -376,47 +380,44 @@
       
 
       
-        <h4 id="AutoWired，自动注入："><a href="#AutoWired，自动注入：" class="headerlink" title="@AutoWired，自动注入："></a>@AutoWired，自动注入：</h4><h5 id="Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><a href="#Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。" class="headerlink" title="Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。"></a>Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</h5><ul>
-<li>a、默认优先按照<strong>【类型】</strong>去容器中找对应的组件：application.getBean(CarDao.class);</li>
-<li>b、如果找到多个相同类型的组件，再将属性的名称作为组件的id去容器中查找applicationContext.getBean(“carDao”)</li>
-<li>c、@Qualifier(“carDao”),使用Qualifier指定需要装配的组件的id，而不是使用属性名</li>
-<li>d、自动装配默认一定要将属性赋值好，没有就会报错；可以使用<br>@Autowired(required = false)</li>
-<li>e、@Primary:让spring进行自动装配的时候，默认使用首选的bean；<br>还可以继续使用@Qualifier进行明确指定（优先级最高）。<a id="more"></a>
-</li>
-</ul>
-<h5 id="AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><a href="#AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值" class="headerlink" title="@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"></a>@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</h5><ul>
-<li>a、标注在【构造器】上：如果组件只有一个有参构造器，这个有参构造器的@AutoWired可以省略</li>
-</ul>
-<p>代码如下：<br><strong>CarDao.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarDao</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String label = <span class="string">"11111"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLabel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> label;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLabel</span><span class="params">(String label)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.label = label;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"CarDao&#123;"</span> +</span><br><span class="line">                <span class="string">"label='"</span> + label + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>CarService.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CarService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"carDao2"</span>)</span><br><span class="line"><span class="comment">//    @Autowired(required = false)//</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CarDao carDao;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"CarService&#123;"</span> +</span><br><span class="line">                <span class="string">"carDao="</span> + carDao +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>测试类MainConfig.java</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">//@ComponentScan(&#123;"com.zero.controller","com.zero.service","com.zero.dao"&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line"><span class="comment">//    @Primary</span></span><br><span class="line">    <span class="meta">@Bean</span>(<span class="string">"carDao2"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CarDao <span class="title">carDao</span><span class="params">()</span></span>&#123;</span><br><span class="line">        CarDao carDao = <span class="keyword">new</span> CarDao();</span><br><span class="line">        carDao.setLabel(<span class="string">"22"</span>);</span><br><span class="line">        <span class="keyword">return</span>  carDao;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><a href="#Spring还支持使用-Resource-JSR250-和-Inject-JSR330" class="headerlink" title="Spring还支持使用@Resource(JSR250)和@Inject(JSR330)"></a>Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</h4><h5 id="Resource"><a href="#Resource" class="headerlink" title="@Resource:"></a>@Resource:</h5><ul>
-<li><p>可以和@AutoWired一样实现自动装配功能：默认是按照组件<strong>【名称】</strong>进行装配的。</p>
-</li>
-<li><p>没有能支持@Primary功能没有支持@Autowired(required=false);</p>
-</li>
-</ul>
-<h5 id="Injecct"><a href="#Injecct" class="headerlink" title="@Injecct"></a>@Injecct</h5><ul>
-<li>需要导入javax.inject的包，和autowired的功能一样，没有required=false的功能；</li>
-<li>@AutoWired：spring定义的；</li>
-<li>@Resource、@Inject都是java规范</li>
-<li>AutowiredAnnotationBeanPostProcessor：解析完成自动装配功能；</li>
-</ul>
-<h4 id="自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><a href="#自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）" class="headerlink" title="自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"></a>自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</h4><p>自定义组件实现xxxAware:在创建对象的时候，会调用接口规定的方法注入相关组件：</p>
+        <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>ZooKeeper是一种高性能的分布式应用协调服务。它在一个简单的接口中公开公共服务，例如命名、配置管理、同步和组服务，这样你就不必从头编写它们。你可以使用它来实现共识、组管理、领导人选举和到场协议。您可以根据自己的特定需要在此基础上进行构建。</p>
+<a id="more"></a>
+<p><strong>特点</strong></p>
+<blockquote>
 <ul>
-<li>Aware：把spring底层的一些组件注入到自定义的Bean中</li>
-<li>ApplicationContextAware ===&gt; ApplicationContextAwareProcessor;</li>
+<li>顺序一致性——来自客户机的更新将按照发送的顺序应用。</li>
+<li>原子性——更新成功或失败。没有部分结果。</li>
+<li>单个系统映像——客户机将看到服务的相同视图，而不管它连接到哪个服务器。</li>
+<li>可靠性——一旦更新被应用，它将从那时起一直持续到客户端覆盖更新。</li>
+<li>及时性——保证客户对系统的看法在一定的时间范围内是最新的。</li>
 </ul>
-<h4 id="Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><a href="#Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。" class="headerlink" title="@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"></a>@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</h4><ul>
-<li>a、加了环境标识bean，只有这个环境被激活的时候才能注册到容器中，默认是default环境</li>
+</blockquote>
+<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
+<li>了解基本原理</li>
+<li>掌握基本使用。</li>
 </ul>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p><strong>1.设计目标</strong><br>ZooKeeper允许分布式进程通过类似于标准文件系统的共享层次命名空间相互协调。名称空间由数据寄存器(ZooKeeper中称为znodes)组成，这些寄存器类似于文件和目录。与设计用于存储的典型文件系统不同，ZooKeeper数据保存在内存中，这意味着ZooKeeper可以获得高吞吐量和低延迟数。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13150128-111c2725450ef042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="zookeeper服务架构"><br>服务器必须相互了解。它们在内存中维护状态映像，以及持久存储中的事务日志和快照。只要大部分服务器可用，ZooKeeper服务就会可用。<br>客户端连接到单个ZooKeeper服务器。客户机维护一个TCP连接，通过该连接发送请求、获取响应、获取监视事件和发送心跳。如果到服务器的TCP连接中断，客户机将连接到另一个服务器。</p>
+<p><strong>2.数据模型</strong><br><img src="https://upload-images.jianshu.io/upload_images/13150128-c5ffad0ff6ea5ad5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数据模型"></p>
+<p>ZooKeeper提供的名称空间与标准文件系统非常相似。名称是用斜杠(/)分隔的路径元素序列。ZooKeeper名称空间中的每个节点都由一个路径标识。</p>
+<p><strong>3.节点和短暂的节点</strong><br>存储在名称空间中的每个znode上的数据都是按原子方式读写的。read获取与znode关联的所有数据字节，write替换所有数据。每个节点都有一个访问控制列表(ACL)，它限制谁可以做什么。<br>ZooKeeper也有短暂节点的概念。只要创建znode的会话处于活动状态，这些znode就存在。当会话结束时，删除znode。当您希望实现时，临时节点非常有用。</p>
+<p><strong>4.条件更新和监视</strong><br>znode可以被监控，包括这个目录节点中存储的数据的修改，子节点目录的变化等，一旦变化可以通知设置监控的客户端，这个是zookeeper的核心特性，zookeeper的很多功能都是基于这个特性实现的。</p>
+<p><strong>5.zkServer中的角色</strong><br>根据其身份特性分为三种<br><strong>leader</strong>：负责客户端的writer类型请求。<br><strong>follower</strong>：负责客户端的reader类型请求，参与leader选举等。<br><strong>observer</strong>：特殊的”follower“，其可以接受客户端reader请求，但不参与选举。（扩容系统支撑能力，提高了读取速度。因为它不接受任何同步的写入请求，只负责与leader同步数据）</p>
+<p>其中<strong>Follower</strong>和<strong>observer</strong>又统称<strong>learner</strong></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p><strong>1.安装教程</strong><br>我就不做重复介绍<br>参考链接：<br><a href="https://www.cnblogs.com/huangjianping/p/8012580.html" target="_blank" rel="noopener">https://www.cnblogs.com/huangjianping/p/8012580.html</a></p>
+<p><strong>2.Java连接操作</strong><br>官网操作：<br><a href="http://zookeeper.apache.org/doc/current/javaExample.html#sc_design" target="_blank" rel="noopener">http://zookeeper.apache.org/doc/current/javaExample.html#sc_design</a></p>
+<p><strong>推荐使用Curator的方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">public class CuratorUtil &#123;</span><br><span class="line"></span><br><span class="line">    /** zookeeper地址 */</span><br><span class="line">    static final String CONNECT_ADDR = &quot;120.79.226.4:2181&quot;;</span><br><span class="line">    /** session超时时间 */</span><br><span class="line">    static final int SESSION_OUTTIME = 5000;//ms</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">        //1 重试策略：初试时间为1s 重试10次</span><br><span class="line">        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 10);</span><br><span class="line">        //2 通过工厂创建连接</span><br><span class="line">        CuratorFramework cf = CuratorFrameworkFactory.builder()</span><br><span class="line">                .connectString(CONNECT_ADDR)</span><br><span class="line">                .sessionTimeoutMs(SESSION_OUTTIME)</span><br><span class="line">                .retryPolicy(retryPolicy)</span><br><span class="line">//					.namespace(&quot;super&quot;)</span><br><span class="line">                .build();</span><br><span class="line">        //3 开启连接</span><br><span class="line">        cf.start();</span><br><span class="line"></span><br><span class="line">        System.out.println(ZooKeeper.States.CONNECTED);</span><br><span class="line">        System.out.println(cf.getState());</span><br><span class="line"></span><br><span class="line">        // 新加、删除</span><br><span class="line">        /**</span><br><span class="line">         //4 建立节点 指定节点类型（不加withMode默认为持久类型节点）、路径、数据内容	*/</span><br><span class="line">//		cf.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(&quot;/super/c1&quot;,&quot;c1内容&quot;.getBytes());</span><br><span class="line">        //5 删除节点</span><br><span class="line">//		cf.delete().guaranteed().deletingChildrenIfNeeded().forPath(&quot;/super&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // 读取、修改</span><br><span class="line">        /**</span><br><span class="line">         //创建节点		*/</span><br><span class="line">//		cf.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(&quot;/super/c1&quot;,&quot;c1内容&quot;.getBytes());</span><br><span class="line">//		cf.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(&quot;/super/c2&quot;,&quot;c2内容&quot;.getBytes());</span><br><span class="line">        //读取节点</span><br><span class="line">//		String ret1 = new String(cf.getData().forPath(&quot;/super/c2&quot;));</span><br><span class="line">//		System.out.println(ret1);</span><br><span class="line">        //修改节点</span><br><span class="line">//		cf.setData().forPath(&quot;/super/c2&quot;, &quot;修改c2内容&quot;.getBytes());</span><br><span class="line">//		String ret2 = new String(cf.getData().forPath(&quot;/super/c2&quot;));</span><br><span class="line">//		System.out.println(ret2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // 绑定回调函数</span><br><span class="line">        /**</span><br><span class="line">         ExecutorService pool = Executors.newCachedThreadPool();</span><br><span class="line">         cf.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT)</span><br><span class="line">         .inBackground(new BackgroundCallback() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void processResult(CuratorFramework cf, CuratorEvent ce) throws Exception &#123;</span><br><span class="line">        System.out.println(&quot;code:&quot; + ce.getResultCode());</span><br><span class="line">        System.out.println(&quot;type:&quot; + ce.getType());</span><br><span class="line">        System.out.println(&quot;线程为:&quot; + Thread.currentThread().getName());</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;, pool)</span><br><span class="line">         .forPath(&quot;/super/c3&quot;,&quot;c3内容&quot;.getBytes());</span><br><span class="line">         Thread.sleep(Integer.MAX_VALUE);</span><br><span class="line">         */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // 读取子节点getChildren方法 和 判断节点是否存在checkExists方法</span><br><span class="line">        /**</span><br><span class="line">         List&lt;String&gt; list = cf.getChildren().forPath(&quot;/super&quot;);</span><br><span class="line">         for(String p : list)&#123;</span><br><span class="line">         System.out.println(p);</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         Stat stat = cf.checkExists().forPath(&quot;/super/c3&quot;);</span><br><span class="line">         System.out.println(stat);</span><br><span class="line"></span><br><span class="line">         Thread.sleep(2000);</span><br><span class="line">         cf.delete().guaranteed().deletingChildrenIfNeeded().forPath(&quot;/super&quot;);</span><br><span class="line">         */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //cf.delete().guaranteed().deletingChildrenIfNeeded().forPath(&quot;/super&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>zookeeper是一个基于观察者模式设计的分布式管理框架，它负责存储和管理大家都关心的数据，然后接受观察者的注册，一旦这些数据的状态发生变化，zk就将负责通知已经在zk上注册的那些观察者做出相应的反应，从而实现集群中类似Master/Slave管理模式。<br><strong>应用场景：</strong></p>
 <ul>
-<li>b、写在配置类上，只有是指定的环境的时候，整个配置类里面所有配置才能开始生效。</li>
-<li>c、没有标注环境标识的bean在任何环境下都加载的。</li>
+<li>配置管理</li>
+<li>集群管理</li>
+<li>发布与订阅</li>
+<li>数据库切换</li>
+<li>分布式日志的收集</li>
+<li>分布式锁、队列管理等。</li>
 </ul>
-<p>示例代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="comment">//@ComponentScan(&#123;"com.zero.controller","com.zero.service","com.zero.dao"&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Primary</span></span><br><span class="line">    <span class="meta">@Bean</span>(<span class="string">"carDao2"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> CarDao <span class="title">carDao</span><span class="params">()</span></span>&#123;</span><br><span class="line">        CarDao carDao = <span class="keyword">new</span> CarDao();</span><br><span class="line">        carDao.setLabel(<span class="string">"22"</span>);</span><br><span class="line">        <span class="keyword">return</span>  carDao;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Profile</span>(<span class="string">"test"</span>)</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> NiuBean <span class="title">niuBean</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> NiuBean();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Profile</span>(<span class="string">"dev"</span>)</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CatBean <span class="title">catBean</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CatBean();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Profile</span>(<span class="string">"prod"</span>)</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DogBean <span class="title">dogBean</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> DogBean();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试类：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testProfile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1.创建一个applicationContext</span></span><br><span class="line">    AnnotationConfigApplicationContext applicationContext = <span class="keyword">new</span> AnnotationConfigApplicationContext();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.设置需要激活的环境</span></span><br><span class="line">    applicationContext.getEnvironment().setActiveProfiles(<span class="string">"test"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.注册主配置类</span></span><br><span class="line">    applicationContext.register(MainConfig.class);</span><br><span class="line">    <span class="comment">//4.启动刷新容器</span></span><br><span class="line">    applicationContext.refresh();</span><br><span class="line"></span><br><span class="line">    String[] definitionNames = applicationContext.getBeanDefinitionNames();</span><br><span class="line">    <span class="keyword">for</span> (String name: definitionNames) &#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>更多的使用是直接配合其他框架一起使用的。如Hadoop、kafka、dubbo.</p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>本人水平有限，欢迎各位建议以及指正，顺便关注一下公众号呗，会经常更新文章的哦。<br><img src="https://upload-images.jianshu.io/upload_images/13150128-894f98cf6f8bf990.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="n平方"></p>
 
       
     </div>
@@ -434,7 +435,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring/" rel="tag"># Spring</a>
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+            <a href="/tags/zookeeper/" rel="tag"># zookeeper</a>
           
         </div>
       
@@ -447,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/14/Spring属性赋值/" rel="next" title="Spring属性赋值">
-                <i class="fa fa-chevron-left"></i> Spring属性赋值
+              <a href="/2019/01/03/Nginx教程/" rel="next" title="Nginx教程">
+                <i class="fa fa-chevron-left"></i> Nginx教程
               </a>
             
           </div>
@@ -457,8 +460,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/31/SpringAOP/" rel="prev" title="SpringAOP">
-                SpringAOP <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/21/Springmail使用/" rel="prev" title="Springmail使用">
+                Springmail使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoWired，自动注入："><span class="nav-number">1.</span> <span class="nav-text">@AutoWired，自动注入：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring利用依赖注入（DI-完成对IOC容器中各个组件的依赖关系赋值。"><span class="nav-number">1.1.</span> <span class="nav-text">Spring利用依赖注入（DI),完成对IOC容器中各个组件的依赖关系赋值。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值"><span class="nav-number">1.2.</span> <span class="nav-text">@AutoWired：可以标记在构造器、参数、方法、属性上：都是从容器中获取参数组件的值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring还支持使用-Resource-JSR250-和-Inject-JSR330"><span class="nav-number">2.</span> <span class="nav-text">Spring还支持使用@Resource(JSR250)和@Inject(JSR330)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Resource"><span class="nav-number">2.1.</span> <span class="nav-text">@Resource:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Injecct"><span class="nav-number">2.2.</span> <span class="nav-text">@Injecct</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）"><span class="nav-number">3.</span> <span class="nav-text">自定义组件想要使用spring容器底层的一些组件（ApplicationContext、BeanFactory、xxxx）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Profile-指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。"><span class="nav-number">4.</span> <span class="nav-text">@Profile:指定组件在哪个环境的情况下才能被注册到容器中，不指定，任何环境都能注册这个组件。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目标"><span class="nav-number">2.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">3.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后"><span class="nav-number">6.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
